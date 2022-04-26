@@ -1,0 +1,67 @@
+
+body{
+    background-color: white;
+    font-family: 'lato', "Arial", "Sans-Serif";
+    
+}
+
+header img {
+    width: 268px;
+}
+
+.searchBar input{
+    background-color:#E7E7E7 ;
+    border:none;
+    width: 100%;
+    border-radius: 5px;
+    color :#0000006c;
+}
+
+.searchBar input:focus, .searchBar input:active{
+    outline:none;
+    box-shadow: inset 2px 2px 5px #b7b6b66c;
+
+}
+
+
+.searchBar, .ingredients , .ustensils , .appareils {
+    position: relative;
+}
+
+.searchBar i{
+    position: absolute;
+    top:55%;
+    right:5%;
+ 
+}
+
+.ingredients i, .ustensils i, .appareils i {
+    position: absolute;
+    top:55%;
+    right:3%;
+    color:#ffffff;
+    margin-right:5px;
+}
+
+.ingredients input,  .ustensils input,  .appareils input{
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    color :#ffffff;
+}
+
+.background-primary{
+    background-color: #3282F7;
+}
+
+.background-secondary{
+    background-color:#68D9A4 ;
+}
+
+.background-tertiary{
+    background-color:#ED6454 ;
+}
+
+input:focus-visible {
+    outline: none;
+}
