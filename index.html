@@ -45,11 +45,11 @@
     />
   </head>
 
-  <body class="container-xxl">
+  <body class="container-fluid">
     <!-- En tete -->
     <header>
       <!-- Logo -->
-      <div class="container-lg p-0">
+      <div class="container-xl p-0">
         <div class="row">
           <div class="text-center mt-4 mb-2">
             <img class="img-fluid mx-auto" src="./assets/logo.png" alt="Logo" />
@@ -128,87 +128,8 @@
     <main>
       <!-- Section des recettes -->
       <section class="recipes">
-        <div class="container-lg mt-5">
-          <div class="row">
-            <div class="col-sm-6 col-lg-4">
-              <!-- Recette -->
-              <article class="recipe">
-                <div class="container p-0">
-                  <!-- Image -->
-                  <div class="row">
-                    <div class="gris"></div>
-                  </div>
-                  <!-- Contenu de la recette -->
-                  <div class="row">
-                    <div class="recipe__content">
-                      <div class="container p-0">
-                        <!-- Titre et temps -->
-                        <div class="row">
-                          <div class="col-6 col-sm-6 ps-2 pe-0">
-                            <h1>Limonade de Coco</h1>
-                          </div>
-                          <div
-                            class="offset-2 col-4 offset-sm-1 col-sm-5 offset-md-2 col-md-4 offset-lg-1 col-lg-5 text-end offset-xl-2 col-xl-4"
-                          >
-                            <i class="fi fi-rr-clock"></i>
-                            <h2 class="d-inline ms-2">10 min</h2>
-                          </div>
-                        </div>
-                        <!-- Ingrédients -->
-                        <div class="row mt-2">
-                          <div class="col-lg-6 p-0">
-                            <ul class="ps-2">
-                              <li>
-                                <p class="recipe__ingredient d-inline">
-                                  Lait de coco :
-                                </p>
-                                <p class="recipe__quantity d-inline">400ml</p>
-                              </li>
-                              <li>
-                                <p class="recipe__ingredient d-inline">
-                                  Jus de citon :
-                                </p>
-                                <p class="recipe__quantity d-inline">2</p>
-                              </li>
-                              <li>
-                                <p class="recipe__ingredient d-inline">
-                                  Crème de coco :
-                                </p>
-                                <p class="recipe__quantity d-inline">
-                                  4 cuillères
-                                </p>
-                              </li>
-                              <li>
-                                <p class="recipe__ingredient d-inline">
-                                  Sucre :
-                                </p>
-                                <p class="recipe__quantity d-inline">20g</p>
-                              </li>
-                              <li>
-                                <p class="recipe__ingredient d-inline">
-                                  Glaçons :
-                                </p>
-                                <p class="recipe__quantity d-inline">2</p>
-                              </li>
-                            </ul>
-                          </div>
-                          <!-- Etapes à suivre -->
-                          <div class="col-lg-6 p-0">
-                            <p>
-                              Mettre les glaçons à votre goût dans le blender,
-                              ajouter le lait, la crème de coco, le jus de 2
-                              citrons et le sucre. Mixer jusqu'à avoir la
-                              consistence désirée
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
+        <div class="container-xl pt-5 pe-0 ps-0">
+          <div id="recipes" class="row g-4"></div>
         </div>
       </section>
     </main>
@@ -223,10 +144,13 @@
     ></script>
     <!-- Scripts -->
 
-    <!-- Api -->
-    <script src="scripts/Api/fetch.js"></script>
+    <!-- Modele -->
+    <script src="scripts/modele/GetRecipes.js"></script>
+
+    <!-- Template -->
+    <script src="scripts/templates/RecipeCard.js"></script>
 
     <!-- Entry point -->
-    <script src="./scripts/main.js"></script>
+    <script src="./scripts/main.js" type="module"></script>
   </body>
 </html>
