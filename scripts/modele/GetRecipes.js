@@ -63,10 +63,10 @@ class GetRecipes {
   }
 
   get description() {
-    const regexInfWords = new RegExp("^\\s*\\S+(?:\\s+\\S+){0,33}\\s*$");
+    const regexInfWords = new RegExp("^\\s*\\S+(?:\\s+\\S+){0,40}\\s*$");
 
     const regexSupWords = new RegExp(
-      "^([:a-zA-ZÀ-ž0-9\\^\\(\\)\\?\\!\\+\\*,\\.\\'\"/°]{0,}[\\s\\.]){33}"
+      "^([:a-zA-ZÀ-ž0-9\\^\\(\\)\\?\\!\\+\\*,\\.\\'\"/°]{0,}[\\s\\.]){0,40}"
     );
 
     if (regexInfWords.test(this._description)) {

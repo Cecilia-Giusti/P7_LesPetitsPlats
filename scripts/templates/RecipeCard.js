@@ -39,14 +39,14 @@ class RecipeCard {
                           </div>
                         </div>
                         <!-- Ingrédients -->
-                        <div class="row mt-2 ">
-                          <div class="col-lg-6 p-0">
+                        <div class="row mt-2 pt-2">
+                          <div class="col-lg-6 p-0 pe-2">
                             <ul class="ps-2">
                               ${this._ingredients}
                             </ul>
                           </div>
                           <!-- Etapes à suivre -->
-                          <div class="col-lg-6 p-0 ">
+                          <div class=" col-lg-6 p-0 ">
                             <p class="recipe__description">
                               ${this._description}
                             </p>
