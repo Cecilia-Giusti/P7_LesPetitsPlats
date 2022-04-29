@@ -1,1 +1,62 @@
-<mxfile host="app.diagrams.net" modified="2022-04-26T17:07:27.076Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="OBP1bzhESCSPelD32MBZ" version="17.4.6" type="github" pages="2"><diagram id="C5RBs43oDa-KdzZeNtuy" name="Algo 1">lZHLDoIwEEW/pksTbI2PrYj4TowP1g2t0FgYLDWiXy+EIjZsNOlienpnpncGETcpfEWzeAuMS4QdViAyQxj3Bxij6jjsWZOxY0CkBDOiFhzEixvoGHoXjOeWUANILTIbhpCmPNQWo0rBw5ZdQNpdMxrxDjiEVHZpIJiOjQs8avmCiyhuOveHk/oloY3YOMljyuDxhYiHiKsAdB0lhctlNbxmLsHyGcjNdeiv9vmNnqbr4+7cq4vN/0n5WFA81b+WLoP2a+XFWjDx3g==</diagram><diagram id="Og9H0QL59GYEpqAu3tgH" name="Algo 2">dZE9D8IgEIZ/DTsF48dcqy5OHZxJOQsJ7RGKafXX2wZqJdWE4XjuvW/C82Y4O2HVFSUYwqgcCD8SxrINY2R6VD4D2dMIaqdlFC2g1C+IkEb60BK6ROgRjdc2hRW2LVQ+YcI57FPZHU1a1YoaVqCshFnTm5ZexSnYbuEX0LWaK2fbQ/A0YhbHSTolJPZfiBeE5w7RB6sZcjDT8ua9hLjTH++nMQet/xEwGkvu8ZNciBdv</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-04-29T13:56:26.127Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.9999.0 Safari/537.36" etag="zSLQRkvPlDNCnLIPLrIQ" version="17.4.6" type="github" pages="2">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Algo 1">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="pZSuN6LD8dpPZFum332B-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pZSuN6LD8dpPZFum332B-0" target="pZSuN6LD8dpPZFum332B-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-0" value="&lt;font style=&quot;vertical-align: inherit&quot;&gt;&lt;font style=&quot;vertical-align: inherit&quot;&gt;&lt;font style=&quot;vertical-align: inherit&quot;&gt;&lt;font style=&quot;vertical-align: inherit&quot;&gt;START&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="356.5" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-1" value="&lt;font style=&quot;vertical-align: inherit&quot;&gt;&lt;font style=&quot;vertical-align: inherit&quot;&gt;&lt;font style=&quot;vertical-align: inherit&quot;&gt;&lt;font style=&quot;vertical-align: inherit&quot;&gt;END&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="356.5" y="640" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pZSuN6LD8dpPZFum332B-2" target="pZSuN6LD8dpPZFum332B-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-2" value="User types 3 letters&lt;br&gt;&amp;nbsp;in the search bar" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="326.5" y="120" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pZSuN6LD8dpPZFum332B-3" target="pZSuN6LD8dpPZFum332B-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pZSuN6LD8dpPZFum332B-3" target="pZSuN6LD8dpPZFum332B-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-3" value="if research in title,&lt;br&gt;&amp;nbsp;ingredient &lt;br&gt;or description" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="340" y="237.5" width="123" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pZSuN6LD8dpPZFum332B-6" target="pZSuN6LD8dpPZFum332B-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-6" value="Show recipes" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="341.5" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pZSuN6LD8dpPZFum332B-9" target="pZSuN6LD8dpPZFum332B-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="370" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="606" y="570" />
+              <mxPoint x="402" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pZSuN6LD8dpPZFum332B-9" value="Show&amp;nbsp;no recipe matches" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="520" y="275" width="172" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Og9H0QL59GYEpqAu3tgH" name="Algo 2">
+    <mxGraphModel dx="1422" dy="802" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
