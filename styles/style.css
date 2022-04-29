@@ -32,11 +32,9 @@ white-space: wrap
 
 
 body{
-    background-color: white;
     font-family: 'lato', "Arial", "Sans-Serif";
-    line-height: 1.2;
+    line-height: 1;
     box-sizing: border-box;
-    
 }
 
 p{
@@ -49,7 +47,6 @@ p{
 }
 
 ul {
-  
   list-style: none;
 }
 
@@ -68,9 +65,7 @@ header img {
 .searchBar input:focus, .searchBar input:active{
     outline:none;
     box-shadow: inset 2px 2px 5px #b7b6b66c;
-
 }
-
 
 .searchBar, .ingredients , .ustensils , .appareils {
     position: relative;
@@ -80,7 +75,6 @@ header img {
     position: absolute;
     top:55%;
     right:5%;
- 
 }
 
 .ingredients i, .ustensils i, .appareils i {
@@ -102,7 +96,7 @@ header img {
 
 /* Recettes */
 .recipe {
-height : 400px;
+height : 410px;
 width:100%;
 border-radius: 5px 5px 5px 5px;
 background-color:#E7E7E7 ;
@@ -147,6 +141,9 @@ h2 {
 }
 
 @media (max-width:1400px){
+    .recipe{
+        height: 430px;
+    }
     h1, h2 {
         font-size: 0.9em;
     }
@@ -155,6 +152,10 @@ h2 {
 }
 
 @media (max-width:1200px){
+    .recipe{
+        height: 450px;
+      
+    }
     h1, h2 {
         font-size: 1em;
     }
@@ -163,6 +164,9 @@ h2 {
 }
 
 @media (max-width:992px){
+    .recipe{
+        height: 470px;
+    }
     h1, h2 {
         font-size: 1.2em;
     }
@@ -174,7 +178,24 @@ h2 {
 
 }
 
+@media (max-width:861px){
+    .recipe{
+        height: 500px;
+    }
+}
+
+@media (max-width:770px){
+    .recipe{
+        height: 600px;
+    }
+}
+
+
 @media (max-width:576px){
+    .recipe{
+        height: 500px;
+    }
+
     h1, h2 {
         font-size: 1.2em;
     }
