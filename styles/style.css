@@ -22,6 +22,7 @@ input:focus-visible {
     outline: none;
 }
 
+<<<<<<< HEAD
 .overflow{
 overflow: hidden;
 }
@@ -29,6 +30,8 @@ overflow: hidden;
 
 
 
+=======
+>>>>>>> develop
 body{
     font-family: 'lato', "Arial", "Sans-Serif";
     line-height: 1;
