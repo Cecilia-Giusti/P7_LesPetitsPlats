@@ -22,15 +22,6 @@ input:focus-visible {
     outline: none;
 }
 
-.overflow{
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: wrap
-}
-
-
-
-
 body{
     font-family: 'lato', "Arial", "Sans-Serif";
     line-height: 1;
