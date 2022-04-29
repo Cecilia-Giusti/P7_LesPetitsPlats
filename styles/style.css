@@ -22,7 +22,6 @@ input:focus-visible {
     outline: none;
 }
 
-<<<<<<< HEAD
 .overflow{
 overflow: hidden;
 }
@@ -30,8 +29,7 @@ overflow: hidden;
 
 
 
-=======
->>>>>>> develop
+>>>>>>>>> Temporary merge branch 2
 body{
     font-family: 'lato', "Arial", "Sans-Serif";
     line-height: 1;
