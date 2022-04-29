@@ -24,8 +24,6 @@ input:focus-visible {
 
 .overflow{
 overflow: hidden;
-text-overflow: ellipsis;
-white-space: wrap
 }
 
 
