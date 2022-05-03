@@ -52,12 +52,24 @@
       <div class="container-xl p-0">
         <div class="row">
           <div class="text-center mt-4 mb-2">
-            <img class="img-fluid mx-auto" src="./assets/logo.png" alt="Logo" />
+            <a class="logo__link" href="index.html">
+              <img
+                class="img-fluid mx-auto"
+                src="./assets/logo.png"
+                alt="Logo"
+              />
+            </a>
           </div>
         </div>
         <!-- Recherche -->
         <div class="row">
-          <form class="searchBar">
+          <form
+            id="searchForm"
+            class="searchBar"
+            name="searchBar"
+            action="index.html"
+            method="GET"
+          >
             <label for="searchBar"> </label>
             <div class="col-12 col-sm-12">
               <input
@@ -66,7 +78,9 @@
                 id="searchBar"
                 value="Rechercher une recette"
               />
-              <i class="fi fi-br-search"></i>
+              <button id="searchBar__button" type="submit">
+                <i class="fi fi-br-search"></i>
+              </button>
             </div>
           </form>
         </div>
@@ -128,7 +142,7 @@
     <main>
       <!-- Section des recettes -->
       <div class="recipes">
-        <div class="container-xl pt-5 pe-0 ps-0">
+        <div class="container-xl pt-5 pe-0 ps-0 pb-5">
           <div id="recipes" class="row g-4"></div>
         </div>
       </div>
@@ -144,11 +158,17 @@
     ></script>
     <!-- Scripts -->
 
+    <!-- Utility -->
+    <script src="scripts/utility/utils.js"></script>
+
     <!-- Modele -->
-    <script src="scripts/modele/GetRecipes.js"></script>
+    <script src="scripts/models/GetRecipes.js"></script>
 
     <!-- Template -->
     <script src="scripts/templates/RecipeCard.js"></script>
+
+    <!-- Algo 1 -->
+    <script src="scripts/Class/Research.js"></script>
 
     <!-- Entry point -->
     <script src="./scripts/main.js" type="module"></script>
