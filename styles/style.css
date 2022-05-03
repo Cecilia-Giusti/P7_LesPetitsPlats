@@ -52,6 +52,10 @@ ul {
   list-style: none;
 }
 
+.logo__link{
+text-decoration: none;
+}
+
 header img {
     width: 268px;
 }
