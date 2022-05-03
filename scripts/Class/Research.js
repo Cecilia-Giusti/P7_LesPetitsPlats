@@ -81,11 +81,6 @@ class Research {
     return this.searchRecipes(resultResearchId);
   }
 
-  /**  Réinitialisation de la galerie*/
-  clearMainWrapper() {
-    this.$mainWrapper.innerHTML = "";
-  }
-
   /** Tri rapide
    * @param {array} Tableau - Tableau à trier
    */

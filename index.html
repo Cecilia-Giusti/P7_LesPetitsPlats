@@ -57,7 +57,13 @@
         </div>
         <!-- Recherche -->
         <div class="row">
-          <form class="searchBar">
+          <form
+            id="searchForm"
+            class="searchBar"
+            name="searchBar"
+            action="index.html"
+            method="GET"
+          >
             <label for="searchBar"> </label>
             <div class="col-12 col-sm-12">
               <input
@@ -130,7 +136,7 @@
     <main>
       <!-- Section des recettes -->
       <div class="recipes">
-        <div class="container-xl pt-5 pe-0 ps-0">
+        <div class="container-xl pt-5 pe-0 ps-0 pb-5">
           <div id="recipes" class="row g-4"></div>
         </div>
       </div>

@@ -7,7 +7,7 @@ async function init() {
 
   //Recherche des recettes via la barre de recherche Algo 1
   const researchInput = document.getElementById("searchBar");
-  const researchForm = document.querySelector("form.searchBar");
+  const researchForm = document.getElementById("searchForm");
 
   // Vider la barre de recherche lors du click
   researchInput.addEventListener("click", () => {
@@ -15,7 +15,8 @@ async function init() {
   }); // Don't - remettre une valeur lors d'un click ailleur
 
   // Evenement à l'envoi de la recherche
-  researchForm.addEventListener("submit", () => {
+  researchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
     //Valeur de la recherche
     const research = researchInput.value;
 
@@ -28,6 +29,10 @@ async function init() {
       // Récupérer les recettes de la recherche
       const recipesResearch = new Research(recipes, research);
       const newRecipes = recipesResearch.researchSort();
+
+      //Création de la nouvelle galerie à partir de la recherche
+      clearGallery();
+      displayData(newRecipes);
     }
   });
 }
