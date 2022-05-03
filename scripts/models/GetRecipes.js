@@ -73,7 +73,6 @@ class GetRecipes {
       return this._description;
     } else {
       const description = this._description.match(regexSupWords);
-      console.log(description[0]);
       return description[0].concat("...");
     }
   }

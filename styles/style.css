@@ -1,5 +1,6 @@
 
 @media all {
+
 .gris{
     background-color: #C7BEBE;
     width:100%;
@@ -26,7 +27,10 @@ input:focus-visible {
 overflow: hidden;
 }
 
-
+button{
+    border:none;
+    padding:0;
+}
 
 
 body{
@@ -69,11 +73,13 @@ header img {
     position: relative;
 }
 
-.searchBar i{
+.searchBar button {
     position: absolute;
     top:55%;
     right:5%;
 }
+
+
 
 .ingredients i, .ustensils i, .appareils i {
     position: absolute;
