@@ -144,6 +144,14 @@ h2 {
   font-family: 'Lato', Arial, sans-serif;
 }
 
+.errorSearch {
+    margin:auto;
+    font-size: 1.2em;
+    text-align: center;
+    padding-top:5%;
+    font-style: italic;
+}
+
 
 
 }

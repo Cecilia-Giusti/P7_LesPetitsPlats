@@ -5,16 +5,17 @@
  */
 function displayData(recipes) {
   const recipesSection = document.querySelector("#recipes");
-
   //Utilisation du constructor pattern pour récupérer les différents items
-  if (recipes != []) {
+  if (recipes.length >= 1) {
     recipes.forEach((recipe) => {
       const getRecipe = new GetRecipes(recipe);
       const Template = new RecipeCard(getRecipe);
       recipesSection.appendChild(Template.createRecipeCard());
     });
   } else {
-    // Don't  - Message tableau vide
+    errorMessage(
+      "Aucune recette ne correspond à votre recherche. Essayez Tomate, Thon ..."
+    );
   }
 }
 
@@ -22,4 +23,16 @@ function displayData(recipes) {
 function clearGallery() {
   const recipesSection = document.querySelector("#recipes");
   recipesSection.innerHTML = "";
+}
+
+/** Afficher un message d'erreur
+ * @param {string} errorMessage - Message d'erreur à afficher
+ */
+function errorMessage(errorMessage) {
+  const recipesSection = document.querySelector("#recipes");
+
+  const errorSearch = document.createElement("p");
+  errorSearch.setAttribute("class", "errorSearch");
+  errorSearch.innerHTML = errorMessage;
+  recipesSection.appendChild(errorSearch);
 }

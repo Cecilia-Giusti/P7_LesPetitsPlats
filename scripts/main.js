@@ -33,6 +33,9 @@ async function init() {
       //Création de la nouvelle galerie à partir de la recherche
       clearGallery();
       displayData(newRecipes);
+    } else {
+      clearGallery();
+      errorMessage("Veuillez entrer au minimum 3 lettres pour votre recherche");
     }
   });
 }

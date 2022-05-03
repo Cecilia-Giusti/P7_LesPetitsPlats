@@ -14,7 +14,6 @@ class Research {
     let nameLoop = 0;
     let nameIndex = 0;
     let nameArray = [];
-    console.log(this._research);
 
     while (nameLoop < this._recipes.length) {
       for (let i = 0; i < this._recipes.length; i++) {
@@ -117,7 +116,7 @@ class Research {
    * @param {array} Tableau - Tableau des id des recettes recherchées
    */
   searchRecipes(array) {
-    if (array != []) {
+    if (array.length >= 1) {
       for (let i = 0; i < array.length; i++) {
         for (let y = 0; y < this._recipes.length; y++) {
           if (array[i] == this._recipes[y].id) {
