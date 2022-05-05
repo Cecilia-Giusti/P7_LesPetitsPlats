@@ -83,14 +83,17 @@ header img {
     right:5%;
 }
 
-
-
-.ingredients i, .ustensils i, .appareils i {
+.tags__button {
     position: absolute;
-    top:55%;
+    top:50%;
     right:3%;
-    color:#ffffff;
+   background-color: transparent;
     margin-right:5px;
+}
+
+.tags__button i {
+    color:#ffffff;
+    
 }
 
 .ingredients input,  .ustensils input,  .appareils input{
