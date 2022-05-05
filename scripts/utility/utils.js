@@ -14,7 +14,7 @@ function displayData(recipes) {
     });
   } else {
     errorMessage(
-      "Aucune recette ne correspond à votre recherche. Essayez Tomate, Thon ..."
+      `Aucune recette ne correspond à votre critère... Vous pouvez chercher "tartes aux pommes", "poisson", etc...`
     );
   }
 }
