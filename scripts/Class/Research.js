@@ -9,125 +9,46 @@ class Research {
     this.$mainWrapper = document.getElementById("recipes");
   }
 
+  /**Recherche des recettes correspondantes et ajout dans un tableau */
   researchSort() {
-    // Recherche dans le nom des recettes
-    let nameLoop = 0;
-    let nameIndex = 0;
-    let nameArray = [];
-    console.log(this._research);
+    let recipesArray = [];
 
-    while (nameLoop < this._recipes.length) {
-      for (let i = 0; i < this._recipes.length; i++) {
-        if (this._recipes[i].name.toLowerCase().indexOf(this._research) >= 0) {
-          nameArray[nameIndex] = this._recipes[i].id;
-          nameLoop++;
-          nameIndex++;
-        } else {
-          nameLoop++;
-        }
+    this._recipes.forEach((element) => {
+      if (
+        element.name.toLowerCase().indexOf(this._research.toLowerCase()) >= 0
+      ) {
+        recipesArray.push(element);
       }
-    }
 
-    // Recherche dans la description des recettes
-    let descriptionLoop = 0;
-    let descriptionIndex = 0;
-    let descriptionArray = [];
-
-    while (descriptionLoop < this._recipes.length) {
-      for (let i = 0; i < this._recipes.length; i++) {
+      if (
+        element.description
+          .toLowerCase()
+          .indexOf(this._research.toLowerCase()) >= 0
+      ) {
+        recipesArray.push(element);
+      }
+      element.ingredients.forEach((ingredient) => {
         if (
-          this._recipes[i].description.toLowerCase().indexOf(this._research) >=
-          0
+          ingredient.ingredient
+            .toLowerCase()
+            .indexOf(this._research.toLowerCase()) >= 0
         ) {
-          descriptionArray[descriptionIndex] = this._recipes[i].id;
-          descriptionLoop++;
-          descriptionIndex++;
-        } else {
-          descriptionLoop++;
+          recipesArray.push(element);
         }
-      }
-    }
+      });
+    });
 
-    // Recherche dans les ingrédients des recettes
-    let ingredientsLoop = 0;
-    let ingredientIndex = 0;
-    let ingredientsArray = [];
-
-    while (ingredientsLoop < this._recipes.length) {
-      for (let i = 0; i < this._recipes.length; i++) {
-        for (let y = 0; y < this._recipes[i].ingredients.length; y++) {
-          if (
-            this._recipes[i].ingredients[y].ingredient
-              .toLowerCase()
-              .indexOf(this._research) >= 0
-          ) {
-            ingredientsArray[ingredientIndex] = this._recipes[i].id;
-            ingredientsLoop++;
-            ingredientIndex++;
-            break;
-          }
-        }
-        ingredientsLoop++;
-      }
-    }
-
-    // Rassemblement des tableaux
-    let concatArray = [...nameArray, ...descriptionArray, ...ingredientsArray];
-
-    // Tri du tableau
-    let resultResearchId = this.quickSort(concatArray);
-
-    // Création du nouveau tableau de recette
-    return this.searchRecipes(resultResearchId);
+    return this.setSort(recipesArray);
   }
 
-  /** Tri rapide
-   * @param {array} Tableau - Tableau à trier
+  /** Suppression des doublons
+   * @param {array} array - Tableau à trier
    */
-  quickSort(array) {
-    let pivot;
-    let researchArrayInf = [];
-    let researchArraySup = [];
-    let researchIndexInf = 0;
-    let researchIndexSup = 0;
-
+  setSort(array) {
     if (array.length <= 1) {
       return array;
     } else {
-      pivot = array[array.length - 1];
-
-      for (let i = 0; i < array.length - 1; i++) {
-        if (array[i] != pivot && array[i] < pivot) {
-          researchArrayInf[researchIndexInf] = array[i];
-          researchIndexInf++;
-        } else if (array[i] != pivot && array[i] > pivot) {
-          researchArraySup[researchIndexSup] = array[i];
-          researchIndexSup++;
-        }
-      }
-      return [
-        ...this.quickSort(researchArrayInf),
-        pivot,
-        ...this.quickSort(researchArraySup),
-      ];
+      return [...new Set([...array])];
     }
-  }
-
-  /** Methode pour récupérer les recettes en fonction de leur id
-   * @param {array} Tableau - Tableau des id des recettes recherchées
-   */
-  searchRecipes(array) {
-    if (array != []) {
-      for (let i = 0; i < array.length; i++) {
-        for (let y = 0; y < this._recipes.length; y++) {
-          if (array[i] == this._recipes[y].id) {
-            array[i] = this._recipes[y];
-          }
-        }
-      }
-    } else {
-      return array;
-    }
-    return array;
   }
 }
