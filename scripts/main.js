@@ -21,7 +21,7 @@ async function init() {
 
     // Vérification de la condition de 3 lettres
     const regexSup3letters = new RegExp(
-      "^[:a-zA-ZÀ-ž0-9\\^\\(\\)\\?\\!\\+\\*,\\.\\'\"/°]{3,}$"
+      "^[:a-zA-ZÀ-ž0-9\\^\\(\\)\\?\\!\\+\\*,\\.\\'\"/°]{3,}"
     );
 
     if (regexSup3letters.test(research)) {

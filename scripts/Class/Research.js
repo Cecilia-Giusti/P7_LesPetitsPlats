@@ -14,13 +14,13 @@ export class Research {
     let recipesArray = [];
 
     this._recipes.forEach((element) => {
-      if (element.name.toLowerCase().indexOf(this._research) >= 0) {
+      if (
+        element.name.toLowerCase().includes(this._research) ||
+        element.description.toLowerCase().includes(this._research)
+      ) {
         recipesArray.push(element);
       }
 
-      if (element.description.toLowerCase().indexOf(this._research) >= 0) {
-        recipesArray.push(element);
-      }
       element.ingredients.forEach((ingredient) => {
         if (ingredient.ingredient.toLowerCase().indexOf(this._research) >= 0) {
           recipesArray.push(element);
@@ -28,17 +28,6 @@ export class Research {
       });
     });
 
-    return this.setSort(recipesArray);
-  }
-
-  /** Suppression des doublons
-   * @param {array} array - Tableau à trier
-   */
-  setSort(array) {
-    if (array.length <= 1) {
-      return array;
-    } else {
-      return [...new Set([...array])];
-    }
+    return [...new Set([...recipesArray])];
   }
 }
