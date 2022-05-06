@@ -96,13 +96,17 @@ header img {
     
 }
 
-.ingredients input,  .ustensils input,  .appareils input{
+.tags__input{
     border: none;
     width: 100%;
     border-radius: 5px;
     color :#ffffff;
+    
 }
 
+.tags__input::-webkit-input-placeholder {
+    color :#ffffff;
+}
 
 
 /* Recettes */
