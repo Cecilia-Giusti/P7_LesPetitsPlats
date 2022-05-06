@@ -9,11 +9,6 @@ async function init() {
   const researchInput = document.getElementById("searchBar");
   const researchForm = document.getElementById("searchForm");
 
-  // Vider la barre de recherche lors du click
-  researchInput.addEventListener("click", () => {
-    researchInput.defaultValue = "";
-  }); // Don't - remettre une valeur lors d'un click ailleur
-
   // Evenement à l'envoi de la recherche
   researchForm.addEventListener("submit", (event) => {
     event.preventDefault();
