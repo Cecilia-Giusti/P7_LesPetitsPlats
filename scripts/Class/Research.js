@@ -10,14 +10,13 @@ class Research {
   }
 
   researchSort() {
-    console.log(this._recipes[0].ingredients.length);
     let recipesArray = [];
     let recipesIndex = 0;
 
     for (let i = 0; i < this._recipes.length; i++) {
       if (
-        this._recipes[i].name.includes(this._research) ||
-        this._recipes[i].description.includes(this._research)
+        this._recipes[i].name.toLowerCase().includes(this._research) ||
+        this._recipes[i].description.toLowerCase().includes(this._research)
       ) {
         recipesArray[recipesIndex] = this._recipes[i];
         recipesIndex++;
@@ -25,7 +24,9 @@ class Research {
 
       for (let y = 0; y < this._recipes[i].ingredients.length; y++) {
         if (
-          this._recipes[i].ingredients[y].ingredient.includes(this._research)
+          this._recipes[i].ingredients[y].ingredient
+            .toLowerCase()
+            .includes(this._research)
         ) {
           recipesArray[recipesIndex] = this._recipes[i];
           recipesIndex++;
