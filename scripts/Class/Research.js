@@ -5,7 +5,7 @@
 export class Research {
   constructor(recipes, research) {
     this._recipes = recipes;
-    this._research = research.toLowerCase();
+    this._research = research.trim().toLowerCase();
     this.$mainWrapper = document.getElementById("recipes");
   }
 
@@ -14,25 +14,15 @@ export class Research {
     let recipesArray = [];
 
     this._recipes.forEach((element) => {
-      if (
-        element.name.toLowerCase().indexOf(this._research.toLowerCase()) >= 0
-      ) {
+      if (element.name.toLowerCase().indexOf(this._research) >= 0) {
         recipesArray.push(element);
       }
 
-      if (
-        element.description
-          .toLowerCase()
-          .indexOf(this._research.toLowerCase()) >= 0
-      ) {
+      if (element.description.toLowerCase().indexOf(this._research) >= 0) {
         recipesArray.push(element);
       }
       element.ingredients.forEach((ingredient) => {
-        if (
-          ingredient.ingredient
-            .toLowerCase()
-            .indexOf(this._research.toLowerCase()) >= 0
-        ) {
+        if (ingredient.ingredient.toLowerCase().indexOf(this._research) >= 0) {
           recipesArray.push(element);
         }
       });

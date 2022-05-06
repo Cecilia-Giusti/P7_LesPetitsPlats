@@ -35,6 +35,7 @@ async function init() {
     } else {
       clearGallery();
       errorMessage("Veuillez entrer au minimum 3 lettres pour votre recherche");
+      displayData(recipes);
     }
   });
 }
