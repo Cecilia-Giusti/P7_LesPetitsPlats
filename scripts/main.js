@@ -1,4 +1,8 @@
 import { recipes } from "../data/recipes.js";
+import { Research } from "./Class/Research.js";
+import { displayData } from "./utility/utils.js";
+import { clearGallery } from "./utility/utils.js";
+import { errorMessage } from "./utility/utils.js";
 
 /** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {

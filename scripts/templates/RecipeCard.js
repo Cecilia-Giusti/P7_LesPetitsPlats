@@ -2,7 +2,7 @@
  * @constructor
  * @param {object} recipe - une recette
  */
-class RecipeCard {
+export class RecipeCard {
   constructor(recipe) {
     this._recipe = recipe;
     this._name = recipe.name;
@@ -11,7 +11,7 @@ class RecipeCard {
     this._description = recipe.description;
   }
 
-  /**  Méthode pour créer une carte de photographe*/
+  /** Méthode pour créer une carte de photographe*/
   createRecipeCard() {
     const $wrapper = document.createElement("div");
     $wrapper.setAttribute("class", "col-sm-6 col-lg-4 ");

@@ -1,9 +1,11 @@
 //UTILS
+import { GetRecipes } from "../models/GetRecipes.js";
+import { RecipeCard } from "../templates/RecipeCard.js";
 
 /**Fonction pour créer le tableaux des photographes
  * @param {Array} recipes - Toutes les recettes
  */
-function displayData(recipes) {
+export function displayData(recipes) {
   const recipesSection = document.querySelector("#recipes");
   //Utilisation du constructor pattern pour récupérer les différents items
   if (recipes.length >= 1) {
@@ -19,16 +21,16 @@ function displayData(recipes) {
   }
 }
 
-/**  Réinitialisation de la galerie*/
-function clearGallery() {
+/**Réinitialisation de la galerie*/
+export function clearGallery() {
   const recipesSection = document.querySelector("#recipes");
   recipesSection.innerHTML = "";
 }
 
-/** Afficher un message d'erreur
+/**Afficher un message d'erreur
  * @param {string} errorMessage - Message d'erreur à afficher
  */
-function errorMessage(errorMessage) {
+export function errorMessage(errorMessage) {
   const recipesSection = document.querySelector("#recipes");
 
   const errorSearch = document.createElement("p");
