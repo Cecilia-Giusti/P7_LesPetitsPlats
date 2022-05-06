@@ -5,7 +5,7 @@
 class Research {
   constructor(recipes, research) {
     this._recipes = recipes;
-    this._research = research.toLowerCase();
+    this._research = research.trim().toLowerCase();
     this.$mainWrapper = document.getElementById("recipes");
   }
 
@@ -15,12 +15,10 @@ class Research {
     let recipesIndex = 0;
 
     for (let i = 0; i < this._recipes.length; i++) {
-      if (this._recipes[i].name.includes(this._research)) {
-        recipesArray[recipesIndex] = this._recipes[i];
-        recipesIndex++;
-      }
-
-      if (this._recipes[i].description.includes(this._research)) {
+      if (
+        this._recipes[i].name.includes(this._research) ||
+        this._recipes[i].description.includes(this._research)
+      ) {
         recipesArray[recipesIndex] = this._recipes[i];
         recipesIndex++;
       }
