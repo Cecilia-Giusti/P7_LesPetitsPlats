@@ -1,4 +1,8 @@
 import { recipes } from "../data/recipes.js";
+import { displayData } from "./utility/utils.js";
+import { clearGallery } from "./utility/utils.js";
+import { errorMessage } from "./utility/utils.js";
+import { Research } from "./Class/Research.js";
 
 /** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {
@@ -37,7 +41,7 @@ async function init() {
   });
 
   // TAGS
-  const tagsInput = document.querySelectorAll(".tags__input");
+  // const tagsInput = document.querySelectorAll(".tags__input");
   const tagsBtn = document.querySelectorAll(".tags__button");
 
   // Ouvrir les onglets lors du click sur la flèche

@@ -2,7 +2,7 @@
  * @constructor
  * @param {object} recipe - Une recette
  */
-class GetRecipes {
+export class GetRecipes {
   constructor(recipe) {
     this._recipe = recipe;
     this._name = recipe.name;
