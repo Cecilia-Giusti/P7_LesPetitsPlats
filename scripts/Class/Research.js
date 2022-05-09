@@ -11,23 +11,23 @@ export class Research {
 
   /**Recherche des recettes correspondantes et ajout dans un tableau */
   researchSort() {
-    let recipesArray = [];
-
-    this._recipes.forEach((element) => {
+    let recipesArray = this._recipes.filter((recipe) => {
       if (
-        element.name.toLowerCase().includes(this._research) ||
-        element.description.toLowerCase().includes(this._research)
+        recipe.name.toLowerCase().includes(this._research) ||
+        recipe.description.toLowerCase().includes(this._research)
       ) {
-        recipesArray.push(element);
+        return (
+          recipe.name.toLowerCase().includes(this._research) ||
+          recipe.description.toLowerCase().includes(this._research)
+        );
+      } else {
+        recipe.ingredients.filter((ingredientName) => {
+          return ingredientName.ingredient
+            .toLowerCase()
+            .includes(this._research);
+        });
       }
-
-      element.ingredients.forEach((ingredient) => {
-        if (ingredient.ingredient.toLowerCase().indexOf(this._research) >= 0) {
-          recipesArray.push(element);
-        }
-      });
     });
-
-    return [...new Set([...recipesArray])];
+    return recipesArray;
   }
 }
