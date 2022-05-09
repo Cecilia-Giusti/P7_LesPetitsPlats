@@ -7,6 +7,21 @@
     height: 178px;
 }
 
+.opacity--medium{
+    opacity: 0.5;
+}
+
+.border-radius--full{
+    border-radius: 5px;
+}
+.border-radius--top{
+    border-radius: 5px 5px 0px 0px;
+}
+
+.border-radius--bottom{
+    border-radius:  0px 0px 5px 5px;
+}
+
 .background-primary{
     background-color: #3282F7;
 }
@@ -17,6 +32,14 @@
 
 .background-tertiary{
     background-color:#ED6454 ;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block{
+    display: block;
 }
 
 input:focus-visible {
@@ -73,7 +96,7 @@ header img {
     box-shadow: inset 2px 2px 5px #b7b6b66c;
 }
 
-.searchBar, .ingredients , .ustensils , .appareils {
+.searchBar, .ingredients , .ustensils , .appliances {
     position: relative;
 }
 
@@ -83,13 +106,17 @@ header img {
     right:5%;
 }
 
+
 .tags__button {
     position: absolute;
-    top:50%;
+    top:35px;
     right:3%;
    background-color: transparent;
     margin-right:5px;
+    z-index: 50;
 }
+
+
 
 .tags__button i {
     color:#ffffff;
@@ -99,8 +126,8 @@ header img {
 .tags__input{
     border: none;
     width: 100%;
-    border-radius: 5px;
     color :#ffffff;
+    position: relative;
     
 }
 
@@ -108,12 +135,45 @@ header img {
     color :#ffffff;
 }
 
+.tags__input:focus::-webkit-input-placeholder{
+    color :#ffffff7d;
+}
+
+.tags__input--open::-webkit-input-placeholder{
+    color :#ffffff7d;
+}
+
+.ingredients__list, .ustensils__list, .appliances__list{
+    position:absolute;
+}
+
+
+.ustensil__item, .ingredient__item, .appliance__item{
+    color:white;
+    border:none;
+    cursor: pointer;
+}
+
+.ustensil__item:hover {
+background-color: #f38f84;
+} 
+
+.ingredient__item:hover{
+background-color: #64a0f9;
+} 
+
+.appliance__item:hover{
+    background-color: #85dcb3;
+}
+
+
+
 
 /* Recettes */
 .recipe {
 height : 410px;
 width:100%;
-border-radius: 5px 5px 5px 5px;
+border-radius: 5px;
 background-color:#E7E7E7 ;
 }
 

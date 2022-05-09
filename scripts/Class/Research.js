@@ -9,6 +9,7 @@ export class Research {
     this.$mainWrapper = document.getElementById("recipes");
   }
 
+  /**Recherche des recettes correspondantes et ajout dans un tableau */
   researchSort() {
     let recipesArray = [];
     let recipesIndex = 0;
