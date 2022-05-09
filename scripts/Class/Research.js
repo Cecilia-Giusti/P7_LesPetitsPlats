@@ -20,16 +20,16 @@ class Research {
       ) {
         recipesArray[recipesIndex] = this._recipes[i];
         recipesIndex++;
-      }
-
-      for (let y = 0; y < this._recipes[i].ingredients.length; y++) {
-        if (
-          this._recipes[i].ingredients[y].ingredient
-            .toLowerCase()
-            .includes(this._research)
-        ) {
-          recipesArray[recipesIndex] = this._recipes[i];
-          recipesIndex++;
+      } else {
+        for (let y = 0; y < this._recipes[i].ingredients.length; y++) {
+          if (
+            this._recipes[i].ingredients[y].ingredient
+              .toLowerCase()
+              .includes(this._research)
+          ) {
+            recipesArray[recipesIndex] = this._recipes[i];
+            recipesIndex++;
+          }
         }
       }
     }
