@@ -14,14 +14,16 @@ export class ListTag {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
       "class",
-      "list-group display-block flex-fill ingredients__list border-radius--bottom"
+      "list-group display-block ingredients__list border-radius--bottom col-sm-12"
     );
 
-    const applianceList = `
+    const ingredientList = `
+    
       ${this._ingredients}
+      
             `;
 
-    $wrapper.innerHTML = applianceList;
+    $wrapper.innerHTML = ingredientList;
     return $wrapper;
   }
 
@@ -29,7 +31,7 @@ export class ListTag {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
       "class",
-      "list-group display-block appliances__list border-radius--bottom"
+      "list-group display-block appliances__list border-radius--bottom col-sm-12 "
     );
 
     const applianceList = `
@@ -44,7 +46,7 @@ export class ListTag {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
       "class",
-      "list-group display-block ustensils__list border-radius--bottom"
+      "list-group display-block ustensils__list border-radius--bottom col-sm-12"
     );
 
     const ustensilsList = `

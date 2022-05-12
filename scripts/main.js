@@ -46,12 +46,16 @@ async function init() {
   // const tagsInput = document.querySelectorAll(".tags__input");
   const tagsBtn = document.querySelectorAll(".tags__button");
 
-  // Ouvrir les onglets lors du click sur la flèche
+  // Ouvrir et fermer les onglets lors du click sur la flèche
   tagsBtn.forEach((button) =>
     button.addEventListener("click", function (e) {
       e.preventDefault();
+
+      //Instanciation des Class
       const tagsGet = new GetTags(recipes);
       const Template = new ListTag(tagsGet);
+
+      //DOM
       const ingredientsTags = document.getElementById("ingredients__form");
       const ustensilsTags = document.getElementById("ustensils__form");
       const applianceTags = document.getElementById("appliance__form");
@@ -59,6 +63,7 @@ async function init() {
       const ustensilsInput = document.getElementById("ustensils");
       const applianceInput = document.getElementById("appliances");
 
+      //Ouverture
       button.innerHTML = "";
       if (button.getAttribute("class") != "tags__button open") {
         // Changement de l'icone
@@ -70,28 +75,48 @@ async function init() {
         // Ouverture de la liste
         switch (button.id) {
           case "ingredients__button":
+            //Ajout de la liste des ingrédients
             ingredientsTags.appendChild(Template.createListIngredients());
             ingredientsInput.setAttribute(
               "class",
               "background-primary p-3 border-radius--top tags__input tags__input--open"
             );
+            // Changement de bootstrap
+            ingredientsTags.parentNode.setAttribute(
+              "class",
+              "col-sm-12 col-lg-6 z-index--100"
+            );
             break;
           case "ustensils__button":
+            //Ajout de la liste des ustensils
             ustensilsTags.appendChild(Template.createListUstensils());
             ustensilsInput.setAttribute(
               "class",
               "background-tertiary p-3 border-radius--top tags__input tags__input--open"
             );
+            // Changement de bootstrap
+            ustensilsTags.parentNode.setAttribute(
+              "class",
+              "col-sm-4 col-lg-4 z-index--100"
+            );
             break;
           case "appliance__button":
+            //Ajout de la liste des appareils
             applianceTags.appendChild(Template.createListAppliance());
             applianceInput.setAttribute(
               "class",
               "background-secondary p-3 border-radius--top tags__input tags__input--open"
             );
+            // Changement de bootstrap
+            applianceTags.parentNode.setAttribute(
+              "class",
+              "col-sm-4 col-lg-2 z-index--100"
+            );
             break;
         }
-      } else {
+      }
+      //Fermeture
+      else {
         // Changement de l'icone
         const arrowDown = document.createElement("i");
         arrowDown.setAttribute("class", "fi fi-bs-angle-down ");
@@ -106,6 +131,11 @@ async function init() {
               "class",
               "background-primary p-3 border-radius--full tags__input"
             );
+            // Changement de bootstrap
+            ingredientsTags.parentNode.setAttribute(
+              "class",
+              "col-sm-4 col-lg-2"
+            );
             break;
           case "ustensils__button":
             ustensilsTags.lastChild.innerHTML = "";
@@ -113,6 +143,8 @@ async function init() {
               "class",
               "background-tertiary p-3 tags__input border-radius--full"
             );
+            // Changement de bootstrap
+            ustensilsTags.parentNode.setAttribute("class", "col-sm-4 col-lg-2");
             break;
           case "appliance__button":
             applianceTags.lastChild.innerHTML = "";
@@ -120,6 +152,8 @@ async function init() {
               "class",
               "background-secondary p-3 border-radius--full tags__input "
             );
+            // Changement de bootstrap
+            applianceTags.parentNode.setAttribute("class", "col-sm-4 col-lg-2");
             break;
         }
       }
