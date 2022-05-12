@@ -1,61 +1,84 @@
 import { recipes } from "../data/recipes.js";
-import { displayData } from "./utility/utils.js";
-import { clearGallery } from "./utility/utils.js";
+import { tags } from "./utility/utils.js";
 import { errorMessage } from "./utility/utils.js";
-import { Research } from "./Class/Research.js";
-import { ListTag } from "./templates/ListTag.js";
-import { GetTags } from "./models/GetTags.js";
+import { searchBar } from "./utility/searchBar.js";
+import { clearGallery, gallery, displayData } from "./utility/gallery.js";
 
 /** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {
-  // Création du tableau des recettes
+  // Création du tableau des recettes au lancement de la page d'accueil
   displayData(recipes);
 
-  // BARRE DE RECHERCHE
+  // DON'T - Cheminement
 
-  //Recherche des recettes via la barre de recherche
+  // Si l-utilisateur cherche dans la barre de recherche en premier
   const researchInput = document.getElementById("searchBar");
   const researchForm = document.getElementById("searchForm");
 
   // Evenement à l'envoi de la recherche
   researchForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
     //Valeur de la recherche
     const research = researchInput.value;
 
     // Vérification de la condition de 3 lettres
     const regexSup3letters = new RegExp(
-      "^[:a-zA-ZÀ-ž0-9\\^\\(\\)\\?\\!\\+\\*,\\.\\'\"/°]{3,}$"
+      "^[:a-zA-ZÀ-ž0-9\\^\\(\\)\\?\\!\\+\\*,\\.\\'\"/°\\s]{3,}$"
     );
 
     if (regexSup3letters.test(research)) {
-      // Récupérer les recettes de la recherche
-      const recipesResearch = new Research(recipes, research);
-      const newRecipes = recipesResearch.researchSort();
-
-      //Création de la nouvelle galerie à partir de la recherche
-      clearGallery();
-      displayData(newRecipes);
+      // Récupérer les recettes correspondant à la recherche
+      const newRecipes = searchBar(recipes, research);
+      gallery(newRecipes);
     } else {
       clearGallery();
       errorMessage("Veuillez entrer au minimum 3 lettres pour votre recherche");
+      displayData(recipes);
     }
   });
 
+  //Si la barre de recherche est vide, on réinitialise
+  researchForm.addEventListener("input", (e) => {
+    e.preventDefault();
+    if (e.data == null || e.data == undefined) {
+      gallery(recipes);
+    }
+  });
+
+  //Création de la nouvelle galerie à partir de la recherche
+  //Recherche des recettes via la barre de recherche
+  // Et qu'il tape ensuite dans les tags Ou qu'il choisit un tag
+  // Et qu'il choisit l'autre option ensuite
+
+  // Si l'utilisateur tape dans les tags
+  // Et qu'il fait la recherche ensuite ou choisit un tag
+  // Et choisit l'autre option ensuite
+
+  // Si l'utilsateur choisit un tag
+  // Et qu'il fait la recherche ensuite ou tape un tag
+  // Et choisit l'autre option ensuite
+
   // TAGS
-  // const tagsInput = document.querySelectorAll(".tags__input");
+  const tagsInput = document.querySelectorAll(".tags__input");
   const tagsBtn = document.querySelectorAll(".tags__button");
+
+  // Evenement lors de la recherche d'un tags
+  tagsInput.forEach((input) =>
+    input.addEventListener("input", function (e) {
+      e.preventDefault();
+      console.log(input.value);
+    })
+  );
 
   // Ouvrir et fermer les onglets lors du click sur la flèche
   tagsBtn.forEach((button) =>
     button.addEventListener("click", function (e) {
       e.preventDefault();
 
-      //Instanciation des Class
-      const tagsGet = new GetTags(recipes);
-      const Template = new ListTag(tagsGet);
+      const Template = tags(recipes);
 
-      //DOM
+      //DOM Tags
       const ingredientsTags = document.getElementById("ingredients__form");
       const ustensilsTags = document.getElementById("ustensils__form");
       const applianceTags = document.getElementById("appliance__form");
