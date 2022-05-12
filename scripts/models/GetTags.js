@@ -23,7 +23,7 @@ export class GetTags {
 
     applianceArray.forEach((applianceName) => {
       const applianceItem = `
-      <li class ="list-group-item background-secondary col-4 col-sm-6 col-lg-12 display-inline appliance__item"> ${applianceName} </li>`;
+      <li data-appliance="${applianceName}" class ="list-group-item background-secondary col-4 col-sm-6 col-lg-12 display-inline appliance__item"> ${applianceName} </li>`;
       applianceArraySort.push(applianceItem);
     });
 
@@ -44,7 +44,7 @@ export class GetTags {
 
     ustensilArray.forEach((ustensilName) => {
       const ustensilItem = `
-      <li class ="list-group-item background-tertiary col-4 col-sm-6 col-lg-6 display-inline ustensil__item"> ${ustensilName} </li>`;
+      <li data-ustensil="${ustensilName}" class ="list-group-item background-tertiary col-4 col-sm-6 col-lg-6 display-inline ustensil__item"> ${ustensilName} </li>`;
       ustensilsArraySort.push(ustensilItem);
     });
 
@@ -65,7 +65,7 @@ export class GetTags {
 
     ingredientsArray.forEach((ingredientName) => {
       const ingredientItem = `
-      <li class ="list-group-item background-primary ingredient__item col-4 col-sm-4 display-inline"> ${ingredientName} </li>`;
+      <li data-ingredient="${ingredientName}" class ="list-group-item background-primary ingredient__item col-4 col-sm-4 display-inline"> ${ingredientName} </li>`;
       ingredientsArraySort.push(ingredientItem);
     });
 

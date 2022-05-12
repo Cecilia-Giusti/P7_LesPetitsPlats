@@ -114,7 +114,43 @@ header img {
     right:5%;
 }
 
+/* Tags sélectionnés */
+#tags {
+    padding-left: 0;
+    
+    -webkit-margin-before: 1em;
+            margin-block-start: 1em;
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+}
 
+.tag__item{
+    color:white;
+    margin-right: 1em;
+    border-radius: 5px;
+    margin-top:0.5em;
+    padding: 0.5em 1em 0.5em 0.8em;
+}
+
+.tag__item--ingredient{
+background-color: #3282F7;
+}
+
+.tag__item--ustensil{
+    background-color: #ED6454;
+}
+
+.tag__item--appliance{
+    background-color: #68D9A4;
+}
+
+.svg__close{
+    cursor: pointer;
+  position:relative;
+  left : 0.5em;
+}
+
+/* Listes des tags */
 .tags__button {
     position: absolute;
     top:35px;
@@ -261,6 +297,10 @@ h2 {
     }
     h1, h2 {
         font-size: 0.9em;
+    }
+
+    .ingredient__item{
+        width: 30%;
     }
 
     

@@ -18,9 +18,7 @@ export class ListTag {
     );
 
     const ingredientList = `
-    
       ${this._ingredients}
-      
             `;
 
     $wrapper.innerHTML = ingredientList;
