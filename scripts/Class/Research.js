@@ -5,28 +5,21 @@
 export class Research {
   constructor(recipes, research) {
     this._recipes = recipes;
-    this._research = research.trim().toLowerCase();
-    this.$mainWrapper = document.getElementById("recipes");
+    this._research = research.toLowerCase();
   }
 
   /**Recherche des recettes correspondantes et ajout dans un tableau */
   researchSort() {
     let recipesArray = this._recipes.filter((recipe) => {
-      if (
+      return (
         recipe.name.toLowerCase().includes(this._research) ||
-        recipe.description.toLowerCase().includes(this._research)
-      ) {
-        return (
-          recipe.name.toLowerCase().includes(this._research) ||
-          recipe.description.toLowerCase().includes(this._research)
-        );
-      } else {
+        recipe.description.toLowerCase().includes(this._research) ||
         recipe.ingredients.filter((ingredientName) => {
           return ingredientName.ingredient
             .toLowerCase()
             .includes(this._research);
-        });
-      }
+        })
+      );
     });
     return recipesArray;
   }
