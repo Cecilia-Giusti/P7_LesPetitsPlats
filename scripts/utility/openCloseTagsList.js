@@ -1,8 +1,25 @@
+import { classAdd } from "/data/classAdd.js";
 import { tagClose } from "./closeTagsList.js";
 import { crossCloseList } from "./closeTagsList.js";
 import { tagItemChoose } from "./openTagsList.js";
+import { searchTag, tags } from "./tags.js";
+import { gallery } from "./gallery.js";
 
-export function openList(button, Template) {
+export function initTagsList(button, recipes) {
+  const Template = tags(recipes);
+
+  //Ouverture
+  button.innerHTML = "";
+  if (button.getAttribute("class") != "tags__button open") {
+    openList(button, Template, recipes);
+  }
+  //Fermeture
+  else {
+    closeList(button);
+  }
+}
+
+export function openList(button, Template, recipes) {
   //DOM
   const ingredientsTags = document.getElementById("ingredients__form");
   const ustensilsTags = document.getElementById("ustensils__form");
@@ -11,35 +28,6 @@ export function openList(button, Template) {
   const ustensilsInput = document.getElementById("ustensils");
   const applianceInput = document.getElementById("appliances");
   let TagList;
-  const classAdd = {
-    ingredient: {
-      tagItem: "tag__item tag__item--ingredient display-inline",
-      listItemOpen:
-        "list-group-item background-primary ingredient__item ingredient__item--open col-4 col-sm-4 display-inline",
-      listItemClose:
-        "list-group-item background-primary ingredient__item col-4 col-sm-4 display-inline",
-      tagInputOpen:
-        "background-primary p-3 border-radius--top tags__input tags__input--open",
-    },
-    ustensil: {
-      tagItem: "tag__item tag__item--ustensil display-inline",
-      listItemOpen:
-        "list-group-item background-tertiary ustensil__item ustensil__item--open col-4 col-sm-6 col-lg-6 display-inline",
-      listItemClose:
-        "list-group-item background-tertiary ustensil__item col-4 col-sm-6 col-lg-6 display-inline",
-      tagInputOpen:
-        "background-tertiary p-3 border-radius--top tags__input tags__input--open",
-    },
-    appliance: {
-      tagItem: "tag__item tag__item--appliance display-inline",
-      listItemOpen:
-        "list-group-item background-secondary appliance__item appliance__item--open col-4 col-sm-6 col-lg-12 display-inline",
-      listItemClose:
-        "list-group-item background-secondary appliance__item col-4 col-sm-6 col-lg-12 display-inline",
-      tagInputOpen:
-        "background-secondary p-3 border-radius--top tags__input tags__input--open",
-    },
-  };
 
   // Changement de l'icone
   const arrowUp = document.createElement("i");
@@ -71,6 +59,8 @@ export function openList(button, Template) {
               classAdd.ingredient.tagItem,
               classAdd.ingredient.listItemOpen
             );
+            const newRecipes = searchTag(recipes, item.dataset.ingredient);
+            gallery(newRecipes);
           }
           // Enlever l'ingrédient choisi
           tagClose(item, classAdd.ingredient.listItemClose);

@@ -1,3 +1,4 @@
+import { TagChoose } from "../Class/TagChoose.js";
 import { GetTags } from "../models/GetTags.js";
 import { ListTag } from "../templates/ListTag.js";
 
@@ -9,4 +10,10 @@ export function tags(recipes) {
   const tagsGet = new GetTags(recipes);
   const template = new ListTag(tagsGet);
   return template;
+}
+
+export function searchTag(recipes, research) {
+  const recipesResearch = new TagChoose(recipes, research);
+  const newRecipes = recipesResearch.tagChoosenIngredients();
+  return newRecipes;
 }

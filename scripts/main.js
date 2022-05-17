@@ -2,14 +2,32 @@ import { recipes } from "../data/recipes.js";
 import { errorMessage } from "./utility/utils.js";
 import { searchBar } from "./utility/searchBar.js";
 import { clearGallery, gallery, displayData } from "./utility/gallery.js";
-import { tags } from "./utility/tags.js";
-import { closeList } from "./utility/openCloseTagsList.js";
-import { openList } from "./utility/openCloseTagsList.js";
+import { initTagsList } from "./utility/openCloseTagsList.js";
 
 /** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {
-  // Création du tableau des recettes au lancement de la page d'accueil
+  // Initiation de la galerie des recettes
   displayData(recipes);
+
+  // initiation des listes de tags
+  const tagsInput = document.querySelectorAll(".tags__input");
+  const tagsBtn = document.querySelectorAll(".tags__button");
+
+  // Ouvrir et fermer les onglets lors du click sur la flèche
+  tagsBtn.forEach((button) =>
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      initTagsList(button, recipes);
+    })
+  );
+
+  // Evenement lors de la recherche d'un tags
+  tagsInput.forEach((input) =>
+    input.addEventListener("input", function (e) {
+      e.preventDefault();
+      console.log(input.value); // Valeur de l'input pour la recherche
+    })
+  );
 
   // DON'T - Cheminement
 
@@ -58,36 +76,6 @@ async function init() {
   // Si l'utilsateur choisit un tag
   // Et qu'il fait la recherche ensuite ou tape un tag
   // Et choisit l'autre option ensuite
-
-  // TAGS
-  const tagsInput = document.querySelectorAll(".tags__input");
-  const tagsBtn = document.querySelectorAll(".tags__button");
-
-  // Evenement lors de la recherche d'un tags
-  tagsInput.forEach((input) =>
-    input.addEventListener("input", function (e) {
-      e.preventDefault();
-      console.log(input.value); // Valeur de l'input pour la recherche
-    })
-  );
-
-  // Ouvrir et fermer les onglets lors du click sur la flèche
-  tagsBtn.forEach((button) =>
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      const Template = tags(recipes);
-
-      //Ouverture
-      button.innerHTML = "";
-      if (button.getAttribute("class") != "tags__button open") {
-        openList(button, Template);
-      }
-      //Fermeture
-      else {
-        closeList(button);
-      }
-    })
-  );
 }
 
 init();
