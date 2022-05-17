@@ -2,7 +2,7 @@
  * @param {Array} recipes - Toutes les recettes
  * @param {string} research - Valeur de la barre de recherche
  */
-export class Research {
+export class Research_2 {
   constructor(recipes, research) {
     this._recipes = recipes;
     this._research = research.toLowerCase();

@@ -1,5 +1,5 @@
 import { recipes } from "../data/recipes.js";
-import { Research } from "./Class/Research.js";
+import { Research } from "./Class/Research_2.js";
 import { displayData } from "./utility/utils.js";
 import { clearGallery } from "./utility/utils.js";
 import { errorMessage } from "./utility/utils.js";
@@ -26,7 +26,7 @@ async function init() {
 
     if (regexSup3letters.test(research)) {
       // Récupérer les recettes de la recherche
-      const recipesResearch = new Research(recipes, research);
+      const recipesResearch = new Research_2(recipes, research);
       const newRecipes = recipesResearch.researchSort();
 
       //Création de la nouvelle galerie à partir de la recherche
