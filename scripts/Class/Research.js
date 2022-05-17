@@ -6,7 +6,6 @@ export class Research {
   constructor(recipes, research) {
     this._recipes = recipes;
     this._research = research.toLowerCase();
-    this.$mainWrapper = document.getElementById("recipes");
   }
 
   /**Recherche des recettes correspondantes et ajout dans un tableau */
