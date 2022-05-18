@@ -6,11 +6,9 @@ import { gallery } from "./gallery.js";
  * @param {}
  */
 export function crossCloseList(tagsList, input, classAddListClose) {
-  tagsList.lastChild.innerHTML = "";
   input.setAttribute("class", classAddListClose);
   // Changement de bootstrap
   tagsList.parentNode.setAttribute("class", "col-sm-4 col-lg-2");
-  tagsList.querySelector("ul").remove();
 }
 
 /** Fermer un tag

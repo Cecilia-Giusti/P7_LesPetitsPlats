@@ -2,7 +2,9 @@ import { recipes } from "../data/recipes.js";
 import { errorMessage } from "./utility/utils.js";
 import { searchBar } from "./utility/searchBar.js";
 import { clearGallery, gallery, displayData } from "./utility/gallery.js";
-import { initTagsList } from "./utility/openCloseTagsList.js";
+import { openList, closeList } from "./utility/openCloseTagsList.js";
+import { tags } from "./utility/tags.js";
+import { createListe } from "./utility/ingredientList.js";
 
 /** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {
@@ -10,14 +12,24 @@ async function init() {
   displayData(recipes);
 
   // initiation des listes de tags
+  const Template = tags(recipes);
+  createListe(Template);
+
+  // Ouvrir et fermer les onglets lors du click sur la flèche
   const tagsInput = document.querySelectorAll(".tags__input");
   const tagsBtn = document.querySelectorAll(".tags__button");
 
-  // Ouvrir et fermer les onglets lors du click sur la flèche
   tagsBtn.forEach((button) =>
     button.addEventListener("click", function (e) {
       e.preventDefault();
-      initTagsList(button, recipes);
+      //Ouvrir et fermer
+
+      button.innerHTML = "";
+      if (button.getAttribute("class") != "tags__button open") {
+        openList(button);
+      } else {
+        closeList(button);
+      }
     })
   );
 
@@ -51,6 +63,7 @@ async function init() {
       // Récupérer les recettes correspondant à la recherche
       const newRecipes = searchBar(recipes, research);
       gallery(newRecipes);
+      //Mise à jour des listes
     } else {
       clearGallery();
       errorMessage("Veuillez entrer au minimum 3 lettres pour votre recherche");

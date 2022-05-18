@@ -15,7 +15,7 @@ export class ListTag {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
       "class",
-      "list-group display-block ingredients__list border-radius--bottom col-sm-12"
+      "list-group display-none ingredients__list border-radius--bottom col-sm-12"
     );
 
     const ingredientList = `
@@ -31,7 +31,7 @@ export class ListTag {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
       "class",
-      "list-group display-block appliances__list border-radius--bottom col-sm-12 "
+      "list-group display-none appliances__list border-radius--bottom col-sm-12 "
     );
 
     const applianceList = `
@@ -47,7 +47,7 @@ export class ListTag {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
       "class",
-      "list-group display-block ustensils__list border-radius--bottom col-sm-12"
+      "list-group display-none ustensils__list border-radius--bottom col-sm-12"
     );
 
     const ustensilsList = `
