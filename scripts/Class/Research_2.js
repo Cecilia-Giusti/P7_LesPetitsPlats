@@ -5,22 +5,22 @@
 export class Research_2 {
   constructor(recipes, research) {
     this._recipes = recipes;
-    this._research = research.toLowerCase();
+    this._research = research.trim().toLowerCase();
   }
 
   /**Recherche des recettes correspondantes et ajout dans un tableau */
   researchSort() {
     let recipesArray = this._recipes.filter((recipe) => {
+      let ingredientArray = recipe.ingredients.map((item) =>
+        item.ingredient.toLowerCase()
+      );
       return (
         recipe.name.toLowerCase().includes(this._research) ||
         recipe.description.toLowerCase().includes(this._research) ||
-        recipe.ingredients.filter((ingredientName) => {
-          return ingredientName.ingredient
-            .toLowerCase()
-            .includes(this._research);
-        })
+        ingredientArray.includes(this._research)
       );
     });
+    console.log(recipesArray);
     return recipesArray;
   }
 }

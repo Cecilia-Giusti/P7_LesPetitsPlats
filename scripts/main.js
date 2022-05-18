@@ -1,5 +1,5 @@
 import { recipes } from "../data/recipes.js";
-import { Research } from "./Class/Research_2.js";
+import { Research_2 } from "./Class/Research_2.js";
 import { displayData } from "./utility/utils.js";
 import { clearGallery } from "./utility/utils.js";
 import { errorMessage } from "./utility/utils.js";
