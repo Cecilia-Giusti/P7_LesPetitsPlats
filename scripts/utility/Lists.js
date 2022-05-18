@@ -3,6 +3,7 @@ import { tagClose } from "./tagClose.js";
 import { classAdd } from "/data/classAdd.js";
 import { searchTag } from "./tags.js";
 import { gallery } from "./gallery.js";
+import { closeList } from "./openCloseTagsList.js";
 
 const ingredientsTags = document.getElementById("ingredients__form");
 const ustensilsTags = document.getElementById("ustensils__form");
@@ -33,6 +34,14 @@ export function ingredientList(recipes) {
           classAdd.ingredient.tagItem,
           classAdd.ingredient.listItemOpen
         );
+        // Recherche avec le tag choisi
+        const newRecipes = searchTag(recipes, ingredient);
+        gallery(newRecipes);
+        const ingredientButton = document.getElementById("ingredients__button");
+        if (ingredientButton.getAttribute("class") == "tags__button open") {
+          ingredientButton.querySelector("i").remove();
+          closeList(ingredientButton);
+        }
       }
       // Enlever l'ustensil choisi
       tagClose(item, classAdd.ingredient.listItemClose, recipes);
@@ -62,6 +71,11 @@ export function ustensilsList(recipes) {
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, ustensil);
         gallery(newRecipes);
+        const ustensilsButton = document.getElementById("ustensils__button");
+        if (ustensilsButton.getAttribute("class") == "tags__button open") {
+          ustensilsButton.querySelector("i").remove();
+          closeList(ustensilsButton);
+        }
       }
       // Enlever l'ustensil choisi
       tagClose(item, classAdd.ustensil.listItemClose, recipes);
@@ -91,6 +105,11 @@ export function applianceList(recipes) {
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, appliance);
         gallery(newRecipes);
+        const appliancetButton = document.getElementById("appliance__button");
+        if (appliancetButton.getAttribute("class") == "tags__button open") {
+          appliancetButton.querySelector("i").remove();
+          closeList(appliancetButton);
+        }
       }
       // Enlever l'appareil choisi
       tagClose(item, classAdd.appliance.listItemClose, recipes);

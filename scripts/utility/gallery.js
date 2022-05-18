@@ -42,8 +42,10 @@ export function gallery(recipes) {
   displayData(recipes);
   // initiation des listes de tags
   clearTagsLists();
+
   const Template = tags(recipes);
   createLists(Template);
+
   ingredientList(recipes);
   ustensilsList(recipes);
   applianceList(recipes);

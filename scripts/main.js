@@ -55,7 +55,6 @@ async function init() {
       // Récupérer les recettes correspondant à la recherche
       const newRecipes = searchBar(recipes, research);
       gallery(newRecipes);
-      //Mise à jour des listes
     } else {
       clearGallery();
       errorMessage("Veuillez entrer au minimum 3 lettres pour votre recherche");
