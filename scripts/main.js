@@ -66,8 +66,9 @@ async function init() {
     }
   });
 
-  // Et qu'il tape ensuite dans les tags Ou qu'il choisit un tag
-  // Et qu'il choisit l'autre option ensuite
+  // S'il choisit un tag
+
+  // S'il écrit dans un tag
 
   // Si l'utilisateur tape dans les tags
   // Et qu'il fait la recherche ensuite ou choisit un tag

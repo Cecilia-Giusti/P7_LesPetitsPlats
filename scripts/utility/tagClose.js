@@ -1,4 +1,4 @@
-import { searchTagDelete } from "./tags.js";
+//import { searchTagDelete } from "./tags.js";
 import { gallery } from "./gallery.js";
 
 /** Fermer une liste de tags
@@ -19,15 +19,14 @@ export function crossCloseList(tagsList, input, classAddListClose) {
  * @param {Array} recipes - Les recettes
  * @param {string} tag - Le tag à enlever
  */
-export function tagClose(item, classAddTagItemClose, recipes, tag) {
+export function tagClose(item, classAddTagItemClose, recipes) {
   let tagsClose = document.querySelectorAll(".svg__close");
   tagsClose.forEach((cross) =>
     cross.addEventListener("click", function (e) {
       e.preventDefault();
       cross.parentNode.remove();
       item.setAttribute("class", classAddTagItemClose);
-      const newRecipes = searchTagDelete(recipes, tag);
-      gallery(newRecipes);
+      gallery(recipes);
     })
   );
 }

@@ -10,7 +10,6 @@ export function tagItemChoose(
   classAddTagItem,
   classAddTagItemOpen
 ) {
-  console.log(item_dataset);
   const tagsListChoose = document.getElementById("tags");
 
   const tagsItemChoose = document.createElement("li");

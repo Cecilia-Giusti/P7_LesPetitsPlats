@@ -1,8 +1,13 @@
 import { classAdd } from "/data/classAdd.js";
-import { tagClose, crossCloseList } from "./closeTagsList.js";
-import { tagItemChoose } from "./openTagsList.js";
+import { tagClose, crossCloseList } from "./tagClose.js";
+import { tagItemChoose } from "./tagOpen.js";
 import { tags, searchTag } from "./tags.js";
 import { gallery } from "./gallery.js";
+import {
+  listTagsOpenIngredient,
+  listTagsOpenUstensils,
+  listTagsOpenAppliances,
+} from "./listTagsOpen.js";
 
 /** Fonction pour initialiser les tags
  * @param
@@ -28,14 +33,6 @@ export function initTagsList(button, recipes) {
  * @param {array} recipes - Les recettes
  */
 export function openList(button, Template, recipes) {
-  console.log(button);
-  //DOM
-  const ingredientsTags = document.getElementById("ingredients__form");
-  const ustensilsTags = document.getElementById("ustensils__form");
-  const applianceTags = document.getElementById("appliance__form");
-  const ingredientsInput = document.getElementById("ingredients");
-  const ustensilsInput = document.getElementById("ustensils");
-  const applianceInput = document.getElementById("appliances");
   let TagList;
 
   // Changement de l'icone
@@ -47,14 +44,7 @@ export function openList(button, Template, recipes) {
   // Ouverture des listes
   switch (button.id) {
     case "ingredients__button":
-      //Ajout de la liste des ingrédients
-      ingredientsTags.appendChild(Template.createListIngredients());
-      ingredientsInput.setAttribute("class", classAdd.ingredient.tagInputOpen);
-      // Changement de bootstrap
-      ingredientsTags.parentNode.setAttribute(
-        "class",
-        "col-sm-12 col-lg-6 z-index--100"
-      );
+      listTagsOpenIngredient(Template);
 
       // Choix d'un ingrédient
       TagList = document.querySelectorAll(".ingredient__item");
@@ -73,27 +63,17 @@ export function openList(button, Template, recipes) {
             // Recherche avec le tag choisi
             const newRecipes = searchTag(recipes, ingredient);
             gallery(newRecipes);
-          } else {
-            // Enlever l'ingrédient choisi
-            tagClose(
-              item,
-              classAdd.ingredient.listItemClose,
-              recipes,
-              ingredient
-            );
+
+            //Mise à jour des listes
           }
+          // Enlever l'ustensil choisi
+          tagClose(item, classAdd.ingredient.listItemClose, recipes);
         })
       );
       break;
     case "ustensils__button":
-      //Ajout de la liste des ustensils
-      ustensilsTags.appendChild(Template.createListUstensils());
-      ustensilsInput.setAttribute("class", classAdd.ustensil.tagInputOpen);
-      // Changement de bootstrap
-      ustensilsTags.parentNode.setAttribute(
-        "class",
-        "col-sm-4 col-lg-4 z-index--100"
-      );
+      listTagsOpenUstensils(Template);
+
       // Choix d'un ustensil
       TagList = document.querySelectorAll(".ustensil__item");
       TagList.forEach((item) =>
@@ -113,20 +93,13 @@ export function openList(button, Template, recipes) {
             gallery(newRecipes);
           }
           // Enlever l'ustensil choisi
-          tagClose(item, classAdd.ustensil.listItemClose, recipes, ustensil);
+          tagClose(item, classAdd.ustensil.listItemClose, recipes);
         })
       );
 
       break;
     case "appliance__button":
-      //Ajout de la liste des appareils
-      applianceTags.appendChild(Template.createListAppliance());
-      applianceInput.setAttribute("class", classAdd.appliance.tagInputOpen);
-      // Changement de bootstrap
-      applianceTags.parentNode.setAttribute(
-        "class",
-        "col-sm-4 col-lg-2 z-index--100"
-      );
+      listTagsOpenAppliances(Template);
       // Choix d'un appareil
       TagList = document.querySelectorAll(".appliance__item");
       TagList.forEach((item) =>
@@ -146,7 +119,7 @@ export function openList(button, Template, recipes) {
             gallery(newRecipes);
           }
           // Enlever l'appareil choisi
-          tagClose(item, classAdd.appliance.listItemClose, recipes, appliance);
+          tagClose(item, classAdd.appliance.listItemClose, recipes);
         })
       );
       break;

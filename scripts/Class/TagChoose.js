@@ -47,7 +47,6 @@ export class TagChoose {
       );
     });
 
-    console.log(recipesArray);
     return recipesArray;
   }
 }
