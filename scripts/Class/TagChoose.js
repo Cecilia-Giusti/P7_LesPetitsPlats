@@ -29,7 +29,7 @@ export class TagChoose {
     return recipesArray;
   }
 
-  /**Recherche des recettes correspondantes et ajout dans un tableau */
+  /**Enlever le tag de la recherche */
   tagDelete() {
     let recipesArray = this._recipes.filter((recipe) => {
       let ingredientArray = recipe.ingredients.map((item) =>

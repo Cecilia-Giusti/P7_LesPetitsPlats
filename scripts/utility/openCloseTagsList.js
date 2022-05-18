@@ -4,6 +4,10 @@ import { tagItemChoose } from "./openTagsList.js";
 import { tags, searchTag } from "./tags.js";
 import { gallery } from "./gallery.js";
 
+/** Fonction pour initialiser les tags
+ * @param
+ * @param {array} recipes - Les recettes
+ */
 export function initTagsList(button, recipes) {
   const Template = tags(recipes);
 
@@ -18,7 +22,13 @@ export function initTagsList(button, recipes) {
   }
 }
 
+/** Fonction pour ouvrir les listes
+ * @param
+ * @param {object} Template - Html à intégrer dans les listes
+ * @param {array} recipes - Les recettes
+ */
 export function openList(button, Template, recipes) {
+  console.log(button);
   //DOM
   const ingredientsTags = document.getElementById("ingredients__form");
   const ustensilsTags = document.getElementById("ustensils__form");
@@ -34,7 +44,7 @@ export function openList(button, Template, recipes) {
   button.appendChild(arrowUp);
   button.setAttribute("class", "tags__button open");
 
-  // Ouverture de la liste d'ingredients
+  // Ouverture des listes
   switch (button.id) {
     case "ingredients__button":
       //Ajout de la liste des ingrédients
@@ -53,12 +63,14 @@ export function openList(button, Template, recipes) {
           let ingredient = item.dataset.ingredient;
           // Si l'ingrédient n'a pas déjà été choisi
           if (item.getAttribute("class") != classAdd.ingredient.listItemOpen) {
+            // Affichage de l'ingrédient
             tagItemChoose(
               item,
               ingredient,
               classAdd.ingredient.tagItem,
               classAdd.ingredient.listItemOpen
             );
+            // Recherche avec le tag choisi
             const newRecipes = searchTag(recipes, ingredient);
             gallery(newRecipes);
           } else {
@@ -86,19 +98,22 @@ export function openList(button, Template, recipes) {
       TagList = document.querySelectorAll(".ustensil__item");
       TagList.forEach((item) =>
         item.addEventListener("click", function () {
+          let ustensil = item.dataset.ustensil;
           // Si l'ustensil n'a pas déjà été choisi
           if (item.getAttribute("class") != classAdd.ustensil.listItemOpen) {
+            //Affichage de l'ustensil
             tagItemChoose(
               item,
-              item.dataset.ustensil,
+              ustensil,
               classAdd.ustensil.tagItem,
               classAdd.ustensil.listItemOpen
             );
-            const newRecipes = searchTag(recipes, item.dataset.ustensil);
+            // Recherche avec le tag choisi
+            const newRecipes = searchTag(recipes, ustensil);
             gallery(newRecipes);
           }
           // Enlever l'ustensil choisi
-          tagClose(item, classAdd.ustensil.listItemClose);
+          tagClose(item, classAdd.ustensil.listItemClose, recipes, ustensil);
         })
       );
 
@@ -116,25 +131,31 @@ export function openList(button, Template, recipes) {
       TagList = document.querySelectorAll(".appliance__item");
       TagList.forEach((item) =>
         item.addEventListener("click", function () {
+          let appliance = item.dataset.appliance;
           // Si l'appareil n'a pas déjà été choisi
           if (item.getAttribute("class") != classAdd.appliance.listItemOpen) {
+            //Affichage de l'appareil
             tagItemChoose(
               item,
-              item.dataset.appliance,
+              appliance,
               classAdd.appliance.tagItem,
               classAdd.appliance.listItemOpen
             );
-            const newRecipes = searchTag(recipes, item.dataset.appliance);
+            // Recherche avec le tag choisi
+            const newRecipes = searchTag(recipes, appliance);
             gallery(newRecipes);
           }
           // Enlever l'appareil choisi
-          tagClose(item, classAdd.appliance.listItemClose);
+          tagClose(item, classAdd.appliance.listItemClose, recipes, appliance);
         })
       );
       break;
   }
 }
 
+/**Fonction pour fermer les listes
+ * @param
+ */
 export function closeList(button) {
   //DOM
   const ingredientsTags = document.getElementById("ingredients__form");

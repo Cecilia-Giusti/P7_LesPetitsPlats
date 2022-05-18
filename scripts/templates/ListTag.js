@@ -10,6 +10,7 @@ export class ListTag {
     this._ustensils = recipes.ustensils;
   }
 
+  /** Création de la liste des ingrédients */
   createListIngredients() {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
@@ -25,6 +26,7 @@ export class ListTag {
     return $wrapper;
   }
 
+  /** Création de la liste des appareils */
   createListAppliance() {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
@@ -40,6 +42,7 @@ export class ListTag {
     return $wrapper;
   }
 
+  /** Création de la liste des ustensils */
   createListUstensils() {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(

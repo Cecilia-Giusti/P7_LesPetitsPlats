@@ -13,7 +13,12 @@ export function crossCloseList(tagsList, input, classAddListClose) {
   tagsList.querySelector("ul").remove();
 }
 
-/** Fermer un tag */
+/** Fermer un tag
+ * @param
+ * @param {string} classAddTagItemClose - class à ajouter lors de la fermeture du tag
+ * @param {Array} recipes - Les recettes
+ * @param {string} tag - Le tag à enlever
+ */
 export function tagClose(item, classAddTagItemClose, recipes, tag) {
   let tagsClose = document.querySelectorAll(".svg__close");
   tagsClose.forEach((cross) =>
