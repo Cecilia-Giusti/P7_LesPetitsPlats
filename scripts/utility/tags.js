@@ -31,3 +31,9 @@ export function searchTagDelete(recipes, tag) {
   const newRecipes = recipesResearch.tagDelete();
   return newRecipes;
 }
+
+export function clearTagsLists() {
+  document.getElementById("ingredients__form").lastChild.remove();
+  document.getElementById("ustensils__form").lastChild.remove();
+  document.getElementById("appliance__form").lastChild.remove();
+}

@@ -8,7 +8,7 @@ const ingredientsTags = document.getElementById("ingredients__form");
 const ustensilsTags = document.getElementById("ustensils__form");
 const applianceTags = document.getElementById("appliance__form");
 
-export function createListe(Template) {
+export function createLists(Template) {
   ingredientsTags.appendChild(Template.createListIngredients());
   ustensilsTags.appendChild(Template.createListUstensils());
   applianceTags.appendChild(Template.createListAppliance());
@@ -18,9 +18,7 @@ export function createListe(Template) {
  * @param {object} Template - Objet créé par la class ListTag
  * @param {array} recipes - Les recettes
  */
-export function ingredientList(Template, recipes) {
-  ingredientsTags.appendChild(Template.createListIngredients());
-
+export function ingredientList(recipes) {
   // Choix d'un ingrédient
   let TagList = document.querySelectorAll(".ingredient__item");
   TagList.forEach((item) =>
@@ -35,20 +33,20 @@ export function ingredientList(Template, recipes) {
           classAdd.ingredient.tagItem,
           classAdd.ingredient.listItemOpen
         );
-        // Recherche avec le tag choisi
-        const newRecipes = searchTag(recipes, ingredient);
-        gallery(newRecipes);
-
-        //Réinitialisation de la liste
-        ingredientsTags.querySelector("ul").remove();
       }
       // Enlever l'ustensil choisi
       tagClose(item, classAdd.ingredient.listItemClose, recipes);
     })
   );
+}
 
+/** Fonction pour créer la liste des ingrédients
+ * @param {object} Template - Objet créé par la class ListTag
+ * @param {array} recipes - Les recettes
+ */
+export function ustensilsList(recipes) {
   // Choix d'un ustensil
-  TagList = document.querySelectorAll(".ustensil__item");
+  let TagList = document.querySelectorAll(".ustensil__item");
   TagList.forEach((item) =>
     item.addEventListener("click", function () {
       let ustensil = item.dataset.ustensil;
@@ -69,9 +67,15 @@ export function ingredientList(Template, recipes) {
       tagClose(item, classAdd.ustensil.listItemClose, recipes);
     })
   );
+}
 
+/** Fonction pour créer la liste des ingrédients
+ * @param {object} Template - Objet créé par la class ListTag
+ * @param {array} recipes - Les recettes
+ */
+export function applianceList(recipes) {
   // Choix d'un appareil
-  TagList = document.querySelectorAll(".appliance__item");
+  let TagList = document.querySelectorAll(".appliance__item");
   TagList.forEach((item) =>
     item.addEventListener("click", function () {
       let appliance = item.dataset.appliance;

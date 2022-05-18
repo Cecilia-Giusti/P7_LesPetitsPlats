@@ -3,17 +3,11 @@ import { errorMessage } from "./utility/utils.js";
 import { searchBar } from "./utility/searchBar.js";
 import { clearGallery, gallery, displayData } from "./utility/gallery.js";
 import { openList, closeList } from "./utility/openCloseTagsList.js";
-import { tags } from "./utility/tags.js";
-import { createListe } from "./utility/ingredientList.js";
 
 /** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {
   // Initiation de la galerie des recettes
-  displayData(recipes);
-
-  // initiation des listes de tags
-  const Template = tags(recipes);
-  createListe(Template);
+  gallery(recipes);
 
   // Ouvrir et fermer les onglets lors du click sur la flèche
   const tagsInput = document.querySelectorAll(".tags__input");
@@ -22,8 +16,6 @@ async function init() {
   tagsBtn.forEach((button) =>
     button.addEventListener("click", function (e) {
       e.preventDefault();
-      //Ouvrir et fermer
-
       button.innerHTML = "";
       if (button.getAttribute("class") != "tags__button open") {
         openList(button);

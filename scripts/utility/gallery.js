@@ -1,6 +1,13 @@
 import { GetRecipes } from "../models/GetRecipes.js";
 import { RecipeCard } from "../templates/RecipeCard.js";
 import { errorMessage } from "../utility/utils.js";
+import { tags, clearTagsLists } from "./tags.js";
+import {
+  applianceList,
+  createLists,
+  ingredientList,
+  ustensilsList,
+} from "./Lists.js";
 
 /**Fonction pour créer le tableaux des photographes
  * @param {Array} recipes - Toutes les recettes
@@ -33,4 +40,11 @@ export function clearGallery() {
 export function gallery(recipes) {
   clearGallery();
   displayData(recipes);
+  // initiation des listes de tags
+  clearTagsLists();
+  const Template = tags(recipes);
+  createLists(Template);
+  ingredientList(recipes);
+  ustensilsList(recipes);
+  applianceList(recipes);
 }
