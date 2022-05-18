@@ -7,47 +7,47 @@ export class TagChoose {
     this._recipes = recipes;
     this._research = research.toLowerCase();
   }
+
   /**Recherche des recettes correspondantes et ajout dans un tableau */
-  researchSort() {
+  tagChoosen() {
     let recipesArray = this._recipes.filter((recipe) => {
-      if (
-        recipe.name.toLowerCase().includes(this._research) ||
-        recipe.description.toLowerCase().includes(this._research)
-      ) {
-        return (
-          recipe.name.toLowerCase().includes(this._research) ||
-          recipe.description.toLowerCase().includes(this._research)
-        );
-      } else {
-        recipe.ingredients.filter((ingredientName) => {
-          return ingredientName.ingredient
-            .toLowerCase()
-            .includes(this._research);
-        });
-      }
+      let ingredientArray = recipe.ingredients.map((item) =>
+        item.ingredient.toLowerCase()
+      );
+
+      let ustensilsArray = recipe.ustensils.map((ustensil) =>
+        ustensil.toLowerCase()
+      );
+
+      return (
+        recipe.appliance.toLowerCase().includes(this._research) ||
+        ustensilsArray.includes(this._research) ||
+        ingredientArray.includes(this._research)
+      );
     });
+
     return recipesArray;
   }
 
   /**Recherche des recettes correspondantes et ajout dans un tableau */
-  tagChoosenIngredients() {
+  tagDelete() {
     let recipesArray = this._recipes.filter((recipe) => {
-      if (
-        recipe.name.toLowerCase().includes(this._research) ||
-        recipe.description.toLowerCase().includes(this._research)
-      ) {
-        return (
-          recipe.name.toLowerCase().includes(this._research) ||
-          recipe.description.toLowerCase().includes(this._research)
-        );
-      } else {
-        recipe.ingredients.filter((ingredientName) => {
-          return ingredientName.ingredient
-            .toLowerCase()
-            .includes(this._research);
-        });
-      }
+      let ingredientArray = recipe.ingredients.map((item) =>
+        item.ingredient.toLowerCase()
+      );
+
+      let ustensilsArray = recipe.ustensils.map((ustensil) =>
+        ustensil.toLowerCase()
+      );
+
+      return (
+        !recipe.appliance.toLowerCase().includes(this._research) ||
+        !ustensilsArray.includes(this._research) ||
+        !ingredientArray.includes(this._research)
+      );
     });
+
+    console.log(recipesArray);
     return recipesArray;
   }
 }

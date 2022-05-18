@@ -1,8 +1,7 @@
 import { classAdd } from "/data/classAdd.js";
-import { tagClose } from "./closeTagsList.js";
-import { crossCloseList } from "./closeTagsList.js";
+import { tagClose, crossCloseList } from "./closeTagsList.js";
 import { tagItemChoose } from "./openTagsList.js";
-import { searchTag, tags } from "./tags.js";
+import { tags, searchTag } from "./tags.js";
 import { gallery } from "./gallery.js";
 
 export function initTagsList(button, recipes) {
@@ -51,19 +50,26 @@ export function openList(button, Template, recipes) {
       TagList = document.querySelectorAll(".ingredient__item");
       TagList.forEach((item) =>
         item.addEventListener("click", function () {
+          let ingredient = item.dataset.ingredient;
           // Si l'ingrédient n'a pas déjà été choisi
           if (item.getAttribute("class") != classAdd.ingredient.listItemOpen) {
             tagItemChoose(
               item,
-              item.dataset.ingredient,
+              ingredient,
               classAdd.ingredient.tagItem,
               classAdd.ingredient.listItemOpen
             );
-            const newRecipes = searchTag(recipes, item.dataset.ingredient);
+            const newRecipes = searchTag(recipes, ingredient);
             gallery(newRecipes);
+          } else {
+            // Enlever l'ingrédient choisi
+            tagClose(
+              item,
+              classAdd.ingredient.listItemClose,
+              recipes,
+              ingredient
+            );
           }
-          // Enlever l'ingrédient choisi
-          tagClose(item, classAdd.ingredient.listItemClose);
         })
       );
       break;
@@ -88,6 +94,8 @@ export function openList(button, Template, recipes) {
               classAdd.ustensil.tagItem,
               classAdd.ustensil.listItemOpen
             );
+            const newRecipes = searchTag(recipes, item.dataset.ustensil);
+            gallery(newRecipes);
           }
           // Enlever l'ustensil choisi
           tagClose(item, classAdd.ustensil.listItemClose);
@@ -116,6 +124,8 @@ export function openList(button, Template, recipes) {
               classAdd.appliance.tagItem,
               classAdd.appliance.listItemOpen
             );
+            const newRecipes = searchTag(recipes, item.dataset.appliance);
+            gallery(newRecipes);
           }
           // Enlever l'appareil choisi
           tagClose(item, classAdd.appliance.listItemClose);

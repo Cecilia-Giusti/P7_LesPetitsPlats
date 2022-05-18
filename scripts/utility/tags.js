@@ -12,8 +12,22 @@ export function tags(recipes) {
   return template;
 }
 
-export function searchTag(recipes, research) {
-  const recipesResearch = new TagChoose(recipes, research);
-  const newRecipes = recipesResearch.tagChoosenIngredients();
+/**Fonction de recherche par tags
+ * @param  {array} recipes - Les recettes disponibles
+ * @param {string} tag - Tag à chercher dans les recettes
+ */
+export function searchTag(recipes, tag) {
+  const recipesResearch = new TagChoose(recipes, tag);
+  const newRecipes = recipesResearch.tagChoosen();
+  return newRecipes;
+}
+
+/**Fonction pour enlever la recherche d'un tag
+ * @param  {array} recipes - Les recettes disponibles
+ * @param {string} tag - Tag à chercher dans les recettes
+ */
+export function searchTagDelete(recipes, tag) {
+  const recipesResearch = new TagChoose(recipes, tag);
+  const newRecipes = recipesResearch.tagDelete();
   return newRecipes;
 }
