@@ -234,6 +234,11 @@ background-color: #64a0f9;
     background-color: #85dcb3;
 }
 
+.ingredients__error, .ustensils__error, .appliances__error{
+    color: white;
+    padding:1em;
+}
+
 
 
 

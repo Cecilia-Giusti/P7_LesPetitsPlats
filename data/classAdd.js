@@ -8,6 +8,7 @@ export const classAdd = {
     tagInputOpen:
       "background-primary p-3 border-radius--top tags__input tags__input--open",
     classAddListClose: "background-primary p-3 border-radius--full tags__input",
+    classAddDataSet: "data-ingredient",
   },
   ustensil: {
     tagItem: "tag__item tag__item--ustensil display-inline",
@@ -19,6 +20,7 @@ export const classAdd = {
       "background-tertiary p-3 border-radius--top tags__input tags__input--open",
     classAddListClose:
       "background-tertiary p-3 border-radius--full tags__input",
+    classAddDataSet: "data-ustensil",
   },
   appliance: {
     tagItem: "tag__item tag__item--appliance display-inline",
@@ -30,5 +32,6 @@ export const classAdd = {
       "background-secondary p-3 border-radius--top tags__input tags__input--open",
     classAddListClose:
       "background-secondary p-3 border-radius--full tags__input",
+    classAddDataSet: "data-appliance",
   },
 };

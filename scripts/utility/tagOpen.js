@@ -3,19 +3,21 @@
  * @param {string} item_dataset - tag choisi
  * @param {string} classAddTagItem - class à ajouter au tag à l'ouverture
  * @param {string} classAddTagItemOpen - class à ajouter au tag à la fermeture
+ * @param {string} classAddDataSet - nom du dataset à ajouter
  */
 export function tagItemChoose(
   item,
   item_dataset,
   classAddTagItem,
-  classAddTagItemOpen
+  classAddTagItemOpen,
+  classAddDataSet
 ) {
   const tagsListChoose = document.getElementById("tags");
 
   const tagsItemChoose = document.createElement("li");
   tagsItemChoose.setAttribute("class", classAddTagItem);
 
-  tagsItemChoose.setAttribute("dataset", item_dataset);
+  tagsItemChoose.setAttribute(classAddDataSet, item_dataset);
   const tagItemChoose = `
             ${item_dataset}
             <svg class="svg__close" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

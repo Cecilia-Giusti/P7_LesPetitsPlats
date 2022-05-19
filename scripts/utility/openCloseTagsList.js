@@ -13,12 +13,6 @@ const applianceInput = document.getElementById("appliances");
  * @param {}
  */
 export function openList(button) {
-  // Changement de l'icone
-  const arrowUp = document.createElement("i");
-  arrowUp.setAttribute("class", "fi fi-bs-angle-up");
-  button.appendChild(arrowUp);
-  button.setAttribute("class", "tags__button open");
-
   // Ouverture des listes
   switch (button.id) {
     case "ingredients__button":
@@ -70,12 +64,6 @@ export function openList(button) {
  * @param {}
  */
 export function closeList(button) {
-  // Changement de l'icone
-  const arrowDown = document.createElement("i");
-  arrowDown.setAttribute("class", "fi fi-bs-angle-down ");
-  button.appendChild(arrowDown);
-  button.setAttribute("class", "tags__button");
-
   // Fermeture de la liste
   switch (button.id) {
     case "ingredients__button":

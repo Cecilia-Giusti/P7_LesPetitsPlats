@@ -32,7 +32,8 @@ export function ingredientList(recipes) {
           item,
           ingredient,
           classAdd.ingredient.tagItem,
-          classAdd.ingredient.listItemOpen
+          classAdd.ingredient.listItemOpen,
+          classAdd.ingredient.classAddDataSet
         );
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, ingredient);
@@ -44,7 +45,7 @@ export function ingredientList(recipes) {
         }
       }
       // Enlever l'ustensil choisi
-      tagClose(item, classAdd.ingredient.listItemClose, recipes);
+      tagClose(item, classAdd.ingredient.listItemClose, recipes, ingredient);
     })
   );
 }
@@ -78,7 +79,7 @@ export function ustensilsList(recipes) {
         }
       }
       // Enlever l'ustensil choisi
-      tagClose(item, classAdd.ustensil.listItemClose, recipes);
+      tagClose(item, classAdd.ustensil.listItemClose, recipes, ustensil);
     })
   );
 }
@@ -112,7 +113,7 @@ export function applianceList(recipes) {
         }
       }
       // Enlever l'appareil choisi
-      tagClose(item, classAdd.appliance.listItemClose, recipes);
+      tagClose(item, classAdd.appliance.listItemClose, recipes, appliance);
     })
   );
 }

@@ -40,6 +40,7 @@ export function clearGallery() {
 export function gallery(recipes) {
   clearGallery();
   displayData(recipes);
+
   // initiation des listes de tags
   clearTagsLists();
 
