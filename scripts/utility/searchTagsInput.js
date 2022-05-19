@@ -46,31 +46,48 @@ export function searchTagsInput(recipes) {
             closeList(ingredientBtn);
             ingredientBtn.innerHTML = "";
             crossClose(ingredientBtn);
+            searchTagsInput(recipes);
           }
 
           break;
         case "appliances":
-          Template = new TagInput(applianceTags, input.value);
-          appliancesArrayList = Template.listAppliance();
+          if (input.value != "") {
+            Template = new TagInput(applianceTags, input.value);
+            appliancesArrayList = Template.listAppliance();
 
-          showTagsInput(
-            input,
-            appliancesArrayList,
-            applianceTagsList,
-            applianceBtn
-          );
+            showTagsInput(
+              appliancesArrayList,
+              applianceTagsList,
+              applianceBtn,
+              htmlAdd.appliance.errorMessageInput
+            );
+          } else {
+            gallery(recipes);
+            closeList(applianceBtn);
+            applianceBtn.innerHTML = "";
+            crossClose(applianceBtn);
+            searchTagsInput(recipes);
+          }
 
           break;
         case "ustensils":
-          Template = new TagInput(ustensilsTags, input.value);
-          ustensilsArrayList = Template.listUstensils();
+          if (input.value != "") {
+            Template = new TagInput(ustensilsTags, input.value);
+            ustensilsArrayList = Template.listUstensils();
 
-          showTagsInput(
-            input,
-            ustensilsArrayList,
-            ustensilsTagsList,
-            ustensilBtn
-          );
+            showTagsInput(
+              ustensilsArrayList,
+              ustensilsTagsList,
+              ustensilBtn,
+              htmlAdd.ustensil.errorMessageInput
+            );
+          } else {
+            gallery(recipes);
+            closeList(ustensilBtn);
+            ustensilBtn.innerHTML = "";
+            crossClose(ustensilBtn);
+            searchTagsInput(recipes);
+          }
 
           break;
       }

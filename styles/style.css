@@ -190,6 +190,7 @@ background-color: #3282F7;
 
 .ingredients__list, .ustensils__list, .appliances__list{
     position:absolute;
+    padding-bottom:10px;
    
 }
 
