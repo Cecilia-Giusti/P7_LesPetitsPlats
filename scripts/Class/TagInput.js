@@ -47,7 +47,7 @@ export class TagInput {
     this._list.forEach((li) => {
       if (li.dataset.appliance.toLowerCase().includes(this._research)) {
         applianceItem = `
-        <li data-ingredient="${li.dataset.appliance}" class ="list-group-item background-secondary col-4 col-sm-6 col-lg-12 display-inline appliance__item"> ${li.dataset.appliance} </li>`;
+        <li data-appliance="${li.dataset.appliance}" class ="list-group-item background-secondary col-4 col-sm-6 col-lg-12 display-inline appliance__item"> ${li.dataset.appliance} </li>`;
 
         listArray.push(applianceItem);
       }

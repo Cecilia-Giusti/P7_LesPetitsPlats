@@ -20,7 +20,7 @@ let ustensilsTags;
 let applianceTags;
 let ingredientBtn;
 let ustensilBtn;
-let appliancetBtn;
+let applianceBtn;
 
 /** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {
@@ -51,7 +51,7 @@ async function init() {
   applianceTags = applianceTagsList.querySelectorAll("li");
 
   ingredientBtn = document.getElementById("ingredients__button");
-  appliancetBtn = document.getElementById("appliance__button");
+  applianceBtn = document.getElementById("appliance__button");
   ustensilBtn = document.getElementById("ustensils__button");
 
   // Evenement lors de la recherche d'un tags
@@ -67,7 +67,7 @@ async function init() {
             Template = new TagInput(ingredientsTags, input.value);
             ingredientsArrayList = Template.listIngredient();
 
-            if (ingredientsArrayList.length > 1) {
+            if (ingredientsArrayList.length >= 1) {
               ingredientsTagsList.innerHTML = "";
               ingredientsTagsList.innerHTML = ingredientsArrayList;
               openList(ingredientBtn);
@@ -89,21 +89,21 @@ async function init() {
             Template = new TagInput(applianceTags, input.value);
             appliancesArrayList = Template.listAppliance();
 
-            if (appliancesArrayList.length > 1) {
+            if (appliancesArrayList.length >= 1) {
               applianceTagsList.innerHTML = "";
               applianceTagsList.innerHTML = appliancesArrayList;
-              openList(appliancetBtn);
-              appliancetBtn.innerHTML = "";
-              crossOpen(appliancetBtn);
+              openList(applianceBtn);
+              applianceBtn.innerHTML = "";
+              crossOpen(applianceBtn);
             } else {
               applianceTagsList.innerHTML = "";
               const errorMessage = `<li class="appliances__error"> Aucun appareil ne correspond à votre recherche</li>`;
               applianceTagsList.innerHTML = errorMessage;
             }
           } else {
-            closeList(appliancetBtn);
-            appliancetBtn.innerHTML = "";
-            crossClose(appliancetBtn);
+            closeList(applianceBtn);
+            applianceBtn.innerHTML = "";
+            crossClose(applianceBtn);
           }
           break;
         case "ustensils":
@@ -111,7 +111,7 @@ async function init() {
             Template = new TagInput(ustensilsTags, input.value);
             ustensilsArrayList = Template.listUstensils();
 
-            if (ustensilsArrayList.length > 1) {
+            if (ustensilsArrayList.length >= 1) {
               ustensilsTagsList.innerHTML = "";
               ustensilsTagsList.innerHTML = ustensilsArrayList;
               openList(ustensilBtn);
