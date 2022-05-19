@@ -1,4 +1,4 @@
-import { classAdd } from "/data/classAdd.js";
+import { htmlAdd } from "/data/htmlAdd.js";
 import { crossCloseList } from "./tagClose.js";
 
 //DOM
@@ -23,7 +23,7 @@ export function openList(button) {
       );
 
       // Changement de bootstrap
-      ingredientsInput.setAttribute("class", classAdd.ingredient.tagInputOpen);
+      ingredientsInput.setAttribute("class", htmlAdd.ingredient.tagInputOpen);
       ingredientsTags.parentNode.setAttribute(
         "class",
         "col-sm-12 col-lg-6 z-index--100"
@@ -37,7 +37,7 @@ export function openList(button) {
         "list-group display-block ustensils__list border-radius--bottom col-sm-12"
       );
       // Changement de bootstrap
-      ustensilsInput.setAttribute("class", classAdd.ustensil.tagInputOpen);
+      ustensilsInput.setAttribute("class", htmlAdd.ustensil.tagInputOpen);
       ustensilsTags.parentNode.setAttribute(
         "class",
         "col-sm-4 col-lg-4 z-index--100"
@@ -51,7 +51,7 @@ export function openList(button) {
         "list-group display-block appliances__list border-radius--bottom col-sm-12 "
       );
       // Changement de bootstrap
-      applianceInput.setAttribute("class", classAdd.appliance.tagInputOpen);
+      applianceInput.setAttribute("class", htmlAdd.appliance.tagInputOpen);
       applianceTags.parentNode.setAttribute(
         "class",
         "col-sm-4 col-lg-2 z-index--100"
@@ -74,7 +74,7 @@ export function closeList(button) {
       crossCloseList(
         ingredientsTags,
         ingredientsInput,
-        classAdd.ingredient.classAddListClose
+        htmlAdd.ingredient.classAddListClose
       );
 
       break;
@@ -87,7 +87,7 @@ export function closeList(button) {
       crossCloseList(
         ustensilsTags,
         ustensilsInput,
-        classAdd.ustensil.classAddListClose
+        htmlAdd.ustensil.classAddListClose
       );
 
       break;
@@ -100,7 +100,7 @@ export function closeList(button) {
       crossCloseList(
         applianceTags,
         applianceInput,
-        classAdd.appliance.classAddListClose
+        htmlAdd.appliance.classAddListClose
       );
 
       break;

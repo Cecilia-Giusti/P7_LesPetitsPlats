@@ -1,6 +1,6 @@
 import { tagItemChoose } from "./tagOpen.js";
 import { tagClose } from "./tagClose.js";
-import { classAdd } from "/data/classAdd.js";
+import { htmlAdd } from "/data/htmlAdd.js";
 import { searchTag } from "./tags.js";
 import { gallery } from "./gallery.js";
 import { closeList } from "./openCloseTagsList.js";
@@ -26,14 +26,14 @@ export function ingredientList(recipes) {
     item.addEventListener("click", function () {
       let ingredient = item.dataset.ingredient;
       // Si l'ingrédient n'a pas déjà été choisi
-      if (item.getAttribute("class") != classAdd.ingredient.listItemOpen) {
+      if (item.getAttribute("class") != htmlAdd.ingredient.listItemOpen) {
         // Affichage de l'ingrédient
         tagItemChoose(
           item,
           ingredient,
-          classAdd.ingredient.tagItem,
-          classAdd.ingredient.listItemOpen,
-          classAdd.ingredient.classAddDataSet
+          htmlAdd.ingredient.tagItem,
+          htmlAdd.ingredient.listItemOpen,
+          htmlAdd.ingredient.classAddDataSet
         );
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, ingredient);
@@ -45,7 +45,7 @@ export function ingredientList(recipes) {
         }
       }
       // Enlever l'ustensil choisi
-      tagClose(item, classAdd.ingredient.listItemClose, recipes, ingredient);
+      tagClose(item, htmlAdd.ingredient.listItemClose, recipes, ingredient);
     })
   );
 }
@@ -61,13 +61,13 @@ export function ustensilsList(recipes) {
     item.addEventListener("click", function () {
       let ustensil = item.dataset.ustensil;
       // Si l'ustensil n'a pas déjà été choisi
-      if (item.getAttribute("class") != classAdd.ustensil.listItemOpen) {
+      if (item.getAttribute("class") != htmlAdd.ustensil.listItemOpen) {
         //Affichage de l'ustensil
         tagItemChoose(
           item,
           ustensil,
-          classAdd.ustensil.tagItem,
-          classAdd.ustensil.listItemOpen
+          htmlAdd.ustensil.tagItem,
+          htmlAdd.ustensil.listItemOpen
         );
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, ustensil);
@@ -79,7 +79,7 @@ export function ustensilsList(recipes) {
         }
       }
       // Enlever l'ustensil choisi
-      tagClose(item, classAdd.ustensil.listItemClose, recipes, ustensil);
+      tagClose(item, htmlAdd.ustensil.listItemClose, recipes, ustensil);
     })
   );
 }
@@ -95,13 +95,13 @@ export function applianceList(recipes) {
     item.addEventListener("click", function () {
       let appliance = item.dataset.appliance;
       // Si l'appareil n'a pas déjà été choisi
-      if (item.getAttribute("class") != classAdd.appliance.listItemOpen) {
+      if (item.getAttribute("class") != htmlAdd.appliance.listItemOpen) {
         //Affichage de l'appareil
         tagItemChoose(
           item,
           appliance,
-          classAdd.appliance.tagItem,
-          classAdd.appliance.listItemOpen
+          htmlAdd.appliance.tagItem,
+          htmlAdd.appliance.listItemOpen
         );
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, appliance);
@@ -113,7 +113,7 @@ export function applianceList(recipes) {
         }
       }
       // Enlever l'appareil choisi
-      tagClose(item, classAdd.appliance.listItemClose, recipes, appliance);
+      tagClose(item, htmlAdd.appliance.listItemClose, recipes, appliance);
     })
   );
 }

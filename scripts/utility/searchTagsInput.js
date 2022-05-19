@@ -1,7 +1,11 @@
 import { TagInput } from "../Class/TagInput.js";
 import { showTagsInput } from "./showTagsInput.js";
+import { closeList } from "./openCloseTagsList.js";
+import { crossClose } from "./utils.js";
+import { gallery } from "./gallery.js";
+import { htmlAdd } from "/data/htmlAdd.js";
 
-export function searchTagsInput() {
+export function searchTagsInput(recipes) {
   const tagsInput = document.querySelectorAll(".tags__input");
   let Template;
   let ingredientsArrayList;
@@ -27,15 +31,22 @@ export function searchTagsInput() {
 
       switch (e.target.id) {
         case "ingredients":
-          Template = new TagInput(ingredientsTags, input.value);
-          ingredientsArrayList = Template.listIngredient();
+          if (input.value != "") {
+            Template = new TagInput(ingredientsTags, input.value);
+            ingredientsArrayList = Template.listIngredient();
 
-          showTagsInput(
-            input,
-            ingredientsArrayList,
-            ingredientsTagsList,
-            ingredientBtn
-          );
+            showTagsInput(
+              ingredientsArrayList,
+              ingredientsTagsList,
+              ingredientBtn,
+              htmlAdd.ingredient.errorMessageInput
+            );
+          } else {
+            gallery(recipes);
+            closeList(ingredientBtn);
+            ingredientBtn.innerHTML = "";
+            crossClose(ingredientBtn);
+          }
 
           break;
         case "appliances":

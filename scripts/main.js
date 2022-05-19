@@ -13,7 +13,7 @@ const tagsBtn = document.querySelectorAll(".tags__button");
 async function init() {
   // Initiation de la galerie des recettes
   gallery(recipes);
-  searchTagsInput();
+  searchTagsInput(recipes);
 
   // Ouvrir et fermer les onglets lors du click sur la flèche
   tagsBtn.forEach((button) =>
@@ -24,7 +24,7 @@ async function init() {
         gallery(recipes);
         crossOpen(button);
         openList(button);
-        searchTagsInput();
+        searchTagsInput(recipes);
       } else {
         crossClose(button);
         closeList(button);

@@ -1,4 +1,4 @@
-export const classAdd = {
+export const htmlAdd = {
   ingredient: {
     tagItem: "tag__item tag__item--ingredient display-inline",
     listItemOpen:
@@ -9,6 +9,7 @@ export const classAdd = {
       "background-primary p-3 border-radius--top tags__input tags__input--open",
     classAddListClose: "background-primary p-3 border-radius--full tags__input",
     classAddDataSet: "data-ingredient",
+    errorMessageInput: `<li class="ingredients__error">Aucun ingrédient ne correspond à votre recherche</li>`,
   },
   ustensil: {
     tagItem: "tag__item tag__item--ustensil display-inline",
@@ -21,6 +22,7 @@ export const classAdd = {
     classAddListClose:
       "background-tertiary p-3 border-radius--full tags__input",
     classAddDataSet: "data-ustensil",
+    errorMessageInput: `<li class="ustensils__error">Aucun ustensil ne correspond à votre recherche</li>`,
   },
   appliance: {
     tagItem: "tag__item tag__item--appliance display-inline",
@@ -33,5 +35,6 @@ export const classAdd = {
     classAddListClose:
       "background-secondary p-3 border-radius--full tags__input",
     classAddDataSet: "data-appliance",
+    errorMessageInput: `<li class="appliances__error">Aucun appareil ne correspond à votre recherche</li>`,
   },
 };
