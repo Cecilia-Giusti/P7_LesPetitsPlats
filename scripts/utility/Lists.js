@@ -4,6 +4,7 @@ import { htmlAdd } from "/data/htmlAdd.js";
 import { searchTag } from "./tags.js";
 import { gallery } from "./gallery.js";
 import { closeList } from "./openCloseTagsList.js";
+import { crossClose } from "./utils.js";
 
 const ingredientsTags = document.getElementById("ingredients__form");
 const ustensilsTags = document.getElementById("ustensils__form");
@@ -42,6 +43,7 @@ export function ingredientList(recipes) {
         if (ingredientButton.getAttribute("class") == "tags__button open") {
           ingredientButton.querySelector("i").remove();
           closeList(ingredientButton);
+          crossClose(ingredientButton);
         }
       }
       // Enlever l'ustensil choisi
@@ -76,6 +78,7 @@ export function ustensilsList(recipes) {
         if (ustensilsButton.getAttribute("class") == "tags__button open") {
           ustensilsButton.querySelector("i").remove();
           closeList(ustensilsButton);
+          crossClose(ustensilsButton);
         }
       }
       // Enlever l'ustensil choisi
@@ -110,6 +113,7 @@ export function applianceList(recipes) {
         if (appliancetButton.getAttribute("class") == "tags__button open") {
           appliancetButton.querySelector("i").remove();
           closeList(appliancetButton);
+          crossClose(appliancetButton);
         }
       }
       // Enlever l'appareil choisi

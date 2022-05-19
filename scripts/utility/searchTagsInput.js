@@ -4,6 +4,7 @@ import { closeList } from "./openCloseTagsList.js";
 import { crossClose } from "./utils.js";
 import { gallery } from "./gallery.js";
 import { htmlAdd } from "/data/htmlAdd.js";
+import { ingredientList } from "./Lists.js";
 
 export function searchTagsInput(recipes) {
   const tagsInput = document.querySelectorAll(".tags__input");
@@ -41,6 +42,8 @@ export function searchTagsInput(recipes) {
               ingredientBtn,
               htmlAdd.ingredient.errorMessageInput
             );
+
+            ingredientList(recipes);
           } else {
             gallery(recipes);
             closeList(ingredientBtn);

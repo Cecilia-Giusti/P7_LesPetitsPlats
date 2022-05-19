@@ -21,7 +21,6 @@ async function init() {
       e.preventDefault();
       button.innerHTML = "";
       if (button.getAttribute("class") != "tags__button open") {
-        gallery(recipes);
         crossOpen(button);
         openList(button);
         searchTagsInput(recipes);
