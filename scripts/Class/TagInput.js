@@ -5,7 +5,7 @@
 export class TagInput {
   constructor(list, research) {
     this._list = list;
-    this._research = research.toLowerCase();
+    this._research = research.trim().toLowerCase();
   }
 
   /**Recherche des ingrédients correspondants à la recherche */
