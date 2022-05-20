@@ -45,9 +45,11 @@ export function ingredientList(recipes) {
           closeList(ingredientButton);
           crossClose(ingredientButton);
         }
+
+        ingredientsTags.reset();
       }
       // Enlever l'ustensil choisi
-      tagClose(item, htmlAdd.ingredient.listItemClose, recipes, ingredient);
+      tagClose(htmlAdd.ingredient.listItemClose, recipes);
     })
   );
 }
@@ -80,6 +82,8 @@ export function ustensilsList(recipes) {
           closeList(ustensilsButton);
           crossClose(ustensilsButton);
         }
+
+        ustensilsTags.reset();
       }
       // Enlever l'ustensil choisi
       tagClose(item, htmlAdd.ustensil.listItemClose, recipes, ustensil);
@@ -115,6 +119,8 @@ export function applianceList(recipes) {
           closeList(appliancetButton);
           crossClose(appliancetButton);
         }
+
+        applianceTags.reset();
       }
       // Enlever l'appareil choisi
       tagClose(item, htmlAdd.appliance.listItemClose, recipes, appliance);

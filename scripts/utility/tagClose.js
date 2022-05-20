@@ -18,15 +18,27 @@ export function crossCloseList(tagsList, input, classAddListClose) {
  * @param {Array} recipes - Les recettes
  * @param {string} tag - Le tag à enlever
  */
-export function tagClose(item, classAddTagItemClose, recipes, tag) {
+export function tagClose(classAddTagItemClose, recipes) {
   let tagsCross = document.querySelectorAll(".svg__close");
+
   tagsCross.forEach((cross) =>
-    cross.addEventListener("click", function (e) {
-      e.preventDefault();
+    cross.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      let item = cross.parentNode;
+      tagsCross = document.querySelectorAll(".svg__close");
+
       cross.parentNode.remove();
       item.setAttribute("class", classAddTagItemClose);
-      const newRecipes = searchTagDelete(recipes, tag);
-      gallery(newRecipes);
+      if (tagsCross.length > 1) {
+        let tag = item.dataset.ingredient;
+
+        const newRecipes = searchTagDelete(recipes, tag);
+        gallery(newRecipes);
+      } else {
+        gallery(recipes);
+        event.stopImmediatePropagation();
+      }
     })
   );
 }
