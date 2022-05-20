@@ -1,5 +1,5 @@
 import { openList } from "./openCloseTagsList.js";
-import { crossOpen, crossClose } from "./utils.js";
+import { crossOpen } from "./utils.js";
 
 export function showTagsInput(arrayList, tagsList, btn, errorMessageInput) {
   if (arrayList.length >= 1) {
@@ -12,6 +12,5 @@ export function showTagsInput(arrayList, tagsList, btn, errorMessageInput) {
   } else {
     tagsList.innerHTML = "";
     tagsList.innerHTML = errorMessageInput;
-    crossClose(btn);
   }
 }

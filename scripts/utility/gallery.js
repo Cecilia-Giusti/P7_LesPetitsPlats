@@ -8,6 +8,7 @@ import {
   ingredientList,
   ustensilsList,
 } from "./Lists.js";
+import { searchTagsInput } from "./searchTagsInput.js";
 
 /**Fonction pour créer le tableaux des photographes
  * @param {Array} recipes - Toutes les recettes
@@ -50,4 +51,6 @@ export function gallery(recipes) {
   ingredientList(recipes);
   ustensilsList(recipes);
   applianceList(recipes);
+
+  searchTagsInput(recipes);
 }

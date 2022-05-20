@@ -3,7 +3,6 @@ import { errorMessage, crossOpen, crossClose } from "./utility/utils.js";
 import { searchBar } from "./utility/searchBar.js";
 import { clearGallery, gallery, displayData } from "./utility/gallery.js";
 import { openList, closeList } from "./utility/openCloseTagsList.js";
-import { searchTagsInput } from "./utility/searchTagsInput.js";
 
 //DOM
 
@@ -13,7 +12,6 @@ const tagsBtn = document.querySelectorAll(".tags__button");
 async function init() {
   // Initiation de la galerie des recettes
   gallery(recipes);
-  searchTagsInput(recipes);
 
   // Ouvrir et fermer les onglets lors du click sur la flèche
   tagsBtn.forEach((button) =>
@@ -23,7 +21,6 @@ async function init() {
       if (button.getAttribute("class") != "tags__button open") {
         crossOpen(button);
         openList(button);
-        searchTagsInput(recipes);
       } else {
         crossClose(button);
         closeList(button);
