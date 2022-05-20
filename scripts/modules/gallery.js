@@ -23,6 +23,7 @@ export function displayData(recipes) {
       recipesSection.appendChild(Template.createRecipeCard());
     });
   } else {
+    clearGallery();
     errorMessage(
       `Aucune recette ne correspond à votre critère... Vous pouvez chercher "tarte aux pommes", "poisson", etc...`
     );
