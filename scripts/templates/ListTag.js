@@ -1,16 +1,18 @@
-/**Template - Pour les tags
- * @constructor
- * @param {object} recipes - Toutes les recettes
- */
+/**Class pour générer les listes de tags*/
 export class ListTag {
+  /** Créer un tableau de recette
+   * @param {Array} recipes - Toutes les recettes
+   */
   constructor(recipes) {
     this._recipes = recipes;
     this._ingredients = recipes.ingredients;
-    this._appliance = recipes.appliance;
+    this._appliances = recipes.appliances;
     this._ustensils = recipes.ustensils;
   }
 
-  /** Création de la liste des ingrédients */
+  /** Création de la liste des ingrédients
+   * @return {string} - Liste des ingrédients
+   */
   createListIngredients() {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
@@ -26,7 +28,9 @@ export class ListTag {
     return $wrapper;
   }
 
-  /** Création de la liste des appareils */
+  /** Création de la liste des appareils
+   * @return {string} - Liste des appareils
+   */
   createListAppliance() {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(
@@ -35,14 +39,16 @@ export class ListTag {
     );
 
     const applianceList = `
-      ${this._appliance}
+      ${this._appliances}
             `;
 
     $wrapper.innerHTML = applianceList;
     return $wrapper;
   }
 
-  /** Création de la liste des ustensils */
+  /** Création de la liste des ustensils
+   * @return {string} - Liste des ustensils
+   */
   createListUstensils() {
     const $wrapper = document.createElement("ul");
     $wrapper.setAttribute(

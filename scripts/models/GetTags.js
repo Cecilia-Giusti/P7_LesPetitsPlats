@@ -1,17 +1,16 @@
-/**Constructor Pattern - Pour les recettes
- * @constructor
- * @param {object} recipes - Toutes les recettes
- */
+/**Constructor Pattern - Pour les listes de tags*/
 export class GetTags {
+  /**Créer un tableau de recettes
+   * @param {array} recipes - Toutes les recettes
+   */
   constructor(recipes) {
     this._recipes = recipes;
   }
 
-  get recipe() {
-    return this._recipe;
-  }
-
-  get appliance() {
+  /** Get the appliance
+   * @return {string} La liste des appareils disponibles
+   */
+  get appliances() {
     let applianceArray = [];
     let applianceArraySort = [];
     let applianceArraySortLi = [];
@@ -35,6 +34,9 @@ export class GetTags {
     return applianceArraySortLi.join(" ");
   }
 
+  /** Get the ustensil
+   * @return {string} La liste des ustensils disponibles
+   */
   get ustensils() {
     let ustensilArray = [];
     let ustensilsArraySort = [];
@@ -61,6 +63,9 @@ export class GetTags {
     return ustensilsArraySortLi.join(" ");
   }
 
+  /** Get the ingredient
+   * @return {string} La liste des ingredients disponibles
+   */
   get ingredients() {
     let ingredientsArray = [];
     let ingredientsArraySort = [];

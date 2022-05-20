@@ -1,15 +1,13 @@
 import { recipes } from "../data/recipes.js";
 import { errorMessage, crossOpen, crossClose } from "./utility/utils.js";
 import { searchBar } from "./utility/searchBar.js";
-import { clearGallery, gallery, displayData } from "./utility/gallery.js";
+import { clearGallery, gallery, displayData } from "./modules/gallery.js";
 import { openList, closeList } from "./utility/openCloseTagsList.js";
-
-//DOM
-
-const tagsBtn = document.querySelectorAll(".tags__button");
 
 /** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {
+  const tagsBtn = document.querySelectorAll(".tags__button");
+
   // Initiation de la galerie des recettes
   gallery(recipes);
 

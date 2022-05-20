@@ -2,10 +2,13 @@ import { TagInput } from "../Class/TagInput.js";
 import { showTagsInput } from "./showTagsInput.js";
 import { closeList } from "./openCloseTagsList.js";
 import { crossClose } from "./utils.js";
-import { gallery } from "./gallery.js";
+import { gallery } from "../modules/gallery.js";
 import { htmlAdd } from "/data/htmlAdd.js";
-import { ingredientList } from "./Lists.js";
+import { ingredientList } from "../modules/Lists.js";
 
+/**Fonction pour réaliser une recheche via les tags inputs
+ * @param {array} - Les recettes
+ */
 export function searchTagsInput(recipes) {
   const tagsInput = document.querySelectorAll(".tags__input");
   let Template;

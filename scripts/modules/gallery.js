@@ -1,14 +1,14 @@
 import { GetRecipes } from "../models/GetRecipes.js";
 import { RecipeCard } from "../templates/RecipeCard.js";
 import { errorMessage } from "../utility/utils.js";
-import { tags, clearTagsLists } from "./tags.js";
+import { tags, clearTagsLists } from "../utility/tags.js";
 import {
   applianceList,
   createLists,
   ingredientList,
   ustensilsList,
 } from "./Lists.js";
-import { searchTagsInput } from "./searchTagsInput.js";
+import { searchTagsInput } from "../utility/searchTagsInput.js";
 
 /**Fonction pour créer le tableaux des photographes
  * @param {Array} recipes - Toutes les recettes

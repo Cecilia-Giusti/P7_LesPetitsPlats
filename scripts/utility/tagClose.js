@@ -1,8 +1,10 @@
 import { searchTagDelete } from "./tags.js";
-import { gallery } from "./gallery.js";
+import { gallery } from "../modules/gallery.js";
+
 /** Fermer une liste de tags
- * @param {} //Don't
- * @param {}
+ * @param {string} tagsList - L'endroit où ajouter le css
+ * @param {string} input - l'input en interaction
+ * @param {string} classAddListClose - css à ajouter
  */
 export function crossCloseList(tagsList, input, classAddListClose) {
   input.setAttribute("class", classAddListClose);
@@ -11,8 +13,8 @@ export function crossCloseList(tagsList, input, classAddListClose) {
 }
 
 /** Fermer un tag
- * @param
- * @param {string} classAddTagItemClose - class à ajouter lors de la fermeture du tag
+ * @param {string} item - L'item qui reçoit le nouveau css
+ * @param {string} classAddTagItemClose - css à ajouter lors de la fermeture du tag
  * @param {Array} recipes - Les recettes
  * @param {string} tag - Le tag à enlever
  */

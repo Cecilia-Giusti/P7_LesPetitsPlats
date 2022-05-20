@@ -1,11 +1,11 @@
 /**Fonction pour afficher le tag choisi
- * @param
+ * @param {string} item - L'item qui reçoit le nouveau css
  * @param {string} item_dataset - tag choisi
  * @param {string} classAddTagItem - class à ajouter au tag à l'ouverture
  * @param {string} classAddTagItemOpen - class à ajouter au tag à la fermeture
  * @param {string} classAddDataSet - nom du dataset à ajouter
  */
-export function tagItemChoose(
+export function tagOpen(
   item,
   item_dataset,
   classAddTagItem,

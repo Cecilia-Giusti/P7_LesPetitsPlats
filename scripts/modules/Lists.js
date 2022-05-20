@@ -1,10 +1,10 @@
-import { tagItemChoose } from "./tagOpen.js";
-import { tagClose } from "./tagClose.js";
+import { tagOpen } from "../utility/tagOpen.js";
+import { tagClose } from "../utility/tagClose.js";
 import { htmlAdd } from "/data/htmlAdd.js";
-import { searchTag } from "./tags.js";
+import { searchTag } from "../utility/tags.js";
 import { gallery } from "./gallery.js";
-import { closeList } from "./openCloseTagsList.js";
-import { crossClose } from "./utils.js";
+import { closeList } from "../utility/openCloseTagsList.js";
+import { crossClose } from "../utility/utils.js";
 
 const ingredientsTags = document.getElementById("ingredients__form");
 const ustensilsTags = document.getElementById("ustensils__form");
@@ -29,7 +29,7 @@ export function ingredientList(recipes) {
       // Si l'ingrédient n'a pas déjà été choisi
       if (item.getAttribute("class") != htmlAdd.ingredient.listItemOpen) {
         // Affichage de l'ingrédient
-        tagItemChoose(
+        tagOpen(
           item,
           ingredient,
           htmlAdd.ingredient.tagItem,
@@ -65,7 +65,7 @@ export function ustensilsList(recipes) {
       // Si l'ustensil n'a pas déjà été choisi
       if (item.getAttribute("class") != htmlAdd.ustensil.listItemOpen) {
         //Affichage de l'ustensil
-        tagItemChoose(
+        tagOpen(
           item,
           ustensil,
           htmlAdd.ustensil.tagItem,
@@ -100,7 +100,7 @@ export function applianceList(recipes) {
       // Si l'appareil n'a pas déjà été choisi
       if (item.getAttribute("class") != htmlAdd.appliance.listItemOpen) {
         //Affichage de l'appareil
-        tagItemChoose(
+        tagOpen(
           item,
           appliance,
           htmlAdd.appliance.tagItem,

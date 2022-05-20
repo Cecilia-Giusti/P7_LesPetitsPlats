@@ -1,14 +1,17 @@
-/**Class pour la création d'une galerie en fonction de la recherche dans l'input
- * @param {NodeList} list - Liste des items à trier
- * @param {string} research - Valeur de la barre de recherche
- */
+/**Class pour la création d'une galerie en fonction de la recherche dans l'input*/
 export class TagInput {
+  /** Création de la recherche
+   * @param {NodeList} list - Liste des items à trier
+   * @param {string} research - Valeur de la barre de recherche
+   */
   constructor(list, research) {
     this._list = list;
     this._research = research.trim().toLowerCase();
   }
 
-  /**Recherche des ingrédients correspondants à la recherche */
+  /**Recherche des ingrédients correspondants à la recherche
+   * @return {} Liste des ingrédients correspondant à la recherche
+   */
   listIngredient() {
     let listArray = [];
     let ingredientItem;
@@ -24,7 +27,9 @@ export class TagInput {
     return listArray;
   }
 
-  /**Recherche des ustensils correspondants à la recherche */
+  /**Recherche des ustensils correspondants à la recherche
+   * * @return {string} Liste des ustensils correspondant à la recherche
+   */
   listUstensils() {
     let listArray = [];
     let ustensilItem;
@@ -40,7 +45,9 @@ export class TagInput {
     return listArray;
   }
 
-  /**Recherche des appareils correspondants à la recherche */
+  /**Recherche des appareils correspondants à la recherche
+   * * @return {} Liste des appareils correspondant à la recherche
+   */
   listAppliance() {
     let listArray = [];
     let applianceItem;
