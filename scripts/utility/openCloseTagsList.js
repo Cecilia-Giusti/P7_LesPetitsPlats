@@ -1,5 +1,5 @@
-import { htmlAdd } from "/data/htmlAdd.js";
 import { crossCloseList } from "./tagClose.js";
+import { htmlAdd } from "/data/htmlAdd.js";
 
 //DOM
 const ingredientsTags = document.getElementById("ingredients__form");
