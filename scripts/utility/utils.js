@@ -27,3 +27,13 @@ export function crossClose(button) {
   button.appendChild(arrowDown);
   button.setAttribute("class", "tags__button");
 }
+
+export function itemDataset(item) {
+  if (item.dataset.ingredient) {
+    return item.dataset.ingredient;
+  } else if (item.dataset.ustensil) {
+    return item.dataset.ustensil;
+  } else {
+    return item.dataset.appliance;
+  }
+}

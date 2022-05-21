@@ -13,10 +13,8 @@ export function crossCloseList(tagsList, input, classAddListClose) {
 }
 
 /** Fermer un tag
- * @param {string} item - L'item qui reçoit le nouveau css
  * @param {string} classAddTagItemClose - css à ajouter lors de la fermeture du tag
  * @param {Array} recipes - Les recettes
- * @param {string} tag - Le tag à enlever
  */
 export function tagClose(classAddTagItemClose, recipes) {
   let tagsCross = document.querySelectorAll(".svg__close");
@@ -27,12 +25,19 @@ export function tagClose(classAddTagItemClose, recipes) {
 
       let item = cross.parentNode;
       tagsCross = document.querySelectorAll(".svg__close");
+      let tag;
 
       cross.parentNode.remove();
       item.setAttribute("class", classAddTagItemClose);
       if (tagsCross.length > 1) {
-        let tag = item.dataset.ingredient;
-
+        if (item.dataset.ingredient) {
+          tag = item.dataset.ingredient;
+        } else if (item.dataset.ustensil) {
+          tag = item.dataset.ustensil;
+        } else {
+          tag = item.dataset.appliance;
+        }
+        console.log(tag.dataset.appliance);
         const newRecipes = searchTagDelete(recipes, tag);
         gallery(newRecipes);
       } else {
