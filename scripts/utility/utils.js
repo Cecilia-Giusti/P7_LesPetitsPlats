@@ -1,7 +1,3 @@
-//UTILS
-import { GetRecipes } from "../models/GetRecipes.js";
-import { RecipeCard } from "../templates/RecipeCard.js";
-
 /** Afficher un message d'erreur
  * @param {string} errorMessage - Message d'erreur à afficher
  */
