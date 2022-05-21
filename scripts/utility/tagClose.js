@@ -3,8 +3,8 @@ import { gallery } from "../modules/gallery.js";
 import { tagDataset } from "./utils.js";
 
 /** Fermer une liste de tags
- * @param {string} tagsList - L'endroit où ajouter le css
- * @param {string} input - l'input en interaction
+ * @param {HTMLElement} tagsList - L'endroit où ajouter le css
+ * @param {HTMLElement} input - l'input en interaction
  * @param {string} classAddListClose - css à ajouter
  */
 export function crossCloseList(tagsList, input, classAddListClose) {

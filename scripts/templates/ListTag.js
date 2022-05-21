@@ -11,7 +11,7 @@ export class ListTag {
   }
 
   /** Création de la liste des ingrédients
-   * @return {string} - Liste des ingrédients
+   * @return {HTMLUListElement} - Liste des ingrédients
    */
   createListIngredients() {
     const $wrapper = document.createElement("ul");
@@ -29,7 +29,7 @@ export class ListTag {
   }
 
   /** Création de la liste des appareils
-   * @return {string} - Liste des appareils
+   * @return {HTMLUListElement} - Liste des appareils
    */
   createListAppliance() {
     const $wrapper = document.createElement("ul");
@@ -47,7 +47,7 @@ export class ListTag {
   }
 
   /** Création de la liste des ustensils
-   * @return {string} - Liste des ustensils
+   * @return {HTMLUListElement} - Liste des ustensils
    */
   createListUstensils() {
     const $wrapper = document.createElement("ul");

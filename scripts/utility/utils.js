@@ -11,7 +11,7 @@ export function errorMessage(errorMessage) {
 }
 
 /** Fonction pour changer le sens de la flèche à l'ouverture de la liste
- * @param {string} button - Le bouton cliqué
+ * @param {Element} button - Le bouton cliqué
  */
 export function crossOpen(button) {
   const arrowUp = document.createElement("i");
@@ -21,7 +21,7 @@ export function crossOpen(button) {
 }
 
 /** Fonction pour changer le sens de la flèche à la fermture de la liste
- * @param {string} button - Le bouton cliqué
+ * @param {Element} button - Le bouton cliqué
  */
 export function crossClose(button) {
   const arrowDown = document.createElement("i");
@@ -31,7 +31,7 @@ export function crossClose(button) {
 }
 
 /** Fonction pour récupérer le dataset en fonction de l'item
- * @return {string} dataset.ingredient || dataset.ustensil || dataset.appliance
+ * @return {ParentNode} dataset.ingredient || dataset.ustensil || dataset.appliance
  */
 export function tagDataset(item) {
   if (item.dataset.ingredient) {
