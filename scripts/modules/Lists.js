@@ -1,6 +1,5 @@
 import { tagOpen } from "../utility/tagOpen.js";
 import { tagClose } from "../utility/tagClose.js";
-import { htmlAdd } from "/data/htmlAdd.js";
 import { searchTag } from "../utility/tags.js";
 import { gallery } from "./gallery.js";
 import { closeList } from "../utility/openCloseTagsList.js";
@@ -72,7 +71,8 @@ export function ustensilsList(recipes) {
           item,
           ustensil,
           htmlAdd.ustensil.tagItem,
-          htmlAdd.ustensil.listItemOpen
+          htmlAdd.ustensil.listItemOpen,
+          htmlAdd.ingredient.classAddDataSet
         );
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, ustensil);
@@ -109,7 +109,8 @@ export function applianceList(recipes) {
           item,
           appliance,
           htmlAdd.appliance.tagItem,
-          htmlAdd.appliance.listItemOpen
+          htmlAdd.appliance.listItemOpen,
+          htmlAdd.ingredient.classAddDataSet
         );
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, appliance);

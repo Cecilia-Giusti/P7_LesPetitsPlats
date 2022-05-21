@@ -1,5 +1,6 @@
 import { searchTagDelete } from "./tags.js";
 import { gallery } from "../modules/gallery.js";
+import { tagDataset } from "./utils.js";
 
 /** Fermer une liste de tags
  * @param {string} tagsList - L'endroit où ajouter le css
@@ -25,19 +26,13 @@ export function tagClose(classAddTagItemClose, recipes) {
 
       let item = cross.parentNode;
       tagsCross = document.querySelectorAll(".svg__close");
-      let tag;
+      console.log(item);
 
       cross.parentNode.remove();
       item.setAttribute("class", classAddTagItemClose);
       if (tagsCross.length > 1) {
-        if (item.dataset.ingredient) {
-          tag = item.dataset.ingredient;
-        } else if (item.dataset.ustensil) {
-          tag = item.dataset.ustensil;
-        } else {
-          tag = item.dataset.appliance;
-        }
-        console.log(tag.dataset.appliance);
+        let tag = tagDataset(item);
+        console.log(tag);
         const newRecipes = searchTagDelete(recipes, tag);
         gallery(newRecipes);
       } else {
