@@ -2,32 +2,7 @@
 import { GetRecipes } from "../models/GetRecipes.js";
 import { RecipeCard } from "../templates/RecipeCard.js";
 
-/**Fonction pour créer le tableaux des photographes
- * @param {Array} recipes - Toutes les recettes
- */
-export function displayData(recipes) {
-  const recipesSection = document.querySelector("#recipes");
-  //Utilisation du constructor pattern pour récupérer les différents items
-  if (recipes.length >= 1) {
-    recipes.forEach((recipe) => {
-      const getRecipe = new GetRecipes(recipe);
-      const Template = new RecipeCard(getRecipe);
-      recipesSection.appendChild(Template.createRecipeCard());
-    });
-  } else {
-    errorMessage(
-      `Aucune recette ne correspond à votre critère... Vous pouvez chercher "tartes aux pommes", "poisson", etc...`
-    );
-  }
-}
-
-/**Réinitialisation de la galerie*/
-export function clearGallery() {
-  const recipesSection = document.querySelector("#recipes");
-  recipesSection.innerHTML = "";
-}
-
-/**Afficher un message d'erreur
+/** Afficher un message d'erreur
  * @param {string} errorMessage - Message d'erreur à afficher
  */
 export function errorMessage(errorMessage) {
@@ -37,4 +12,37 @@ export function errorMessage(errorMessage) {
   errorSearch.setAttribute("class", "errorSearch");
   errorSearch.innerHTML = errorMessage;
   recipesSection.appendChild(errorSearch);
+}
+
+/** Fonction pour changer le sens de la flèche à l'ouverture de la liste
+ * @param {string} button - Le bouton cliqué
+ */
+export function crossOpen(button) {
+  const arrowUp = document.createElement("i");
+  arrowUp.setAttribute("class", "fi fi-bs-angle-up");
+  button.appendChild(arrowUp);
+  button.setAttribute("class", "tags__button open");
+}
+
+/** Fonction pour changer le sens de la flèche à la fermture de la liste
+ * @param {string} button - Le bouton cliqué
+ */
+export function crossClose(button) {
+  const arrowDown = document.createElement("i");
+  arrowDown.setAttribute("class", "fi fi-bs-angle-down ");
+  button.appendChild(arrowDown);
+  button.setAttribute("class", "tags__button");
+}
+
+/** Fonction pour récupérer le dataset en fonction de l'item
+ * @return {string} dataset.ingredient || dataset.ustensil || dataset.appliance
+ */
+export function tagDataset(item) {
+  if (item.dataset.ingredient) {
+    return item.dataset.ingredient;
+  } else if (item.dataset.ustensil) {
+    return item.dataset.ustensil;
+  } else {
+    return item.dataset.appliance;
+  }
 }

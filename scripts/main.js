@@ -1,43 +1,46 @@
 import { recipes } from "../data/recipes.js";
-import { Research_2 } from "./Class/Research_2.js";
-import { displayData } from "./utility/utils.js";
-import { clearGallery } from "./utility/utils.js";
-import { errorMessage } from "./utility/utils.js";
+import { crossOpen, crossClose } from "./utility/utils.js";
+import { searchBar } from "./modules/searchBar.js";
+import { gallery } from "./modules/gallery.js";
+import { openList, closeList } from "./utility/openCloseTagsList.js";
 
 /** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {
-  // Création du tableau des recettes
-  displayData(recipes);
+  const tagsBtn = document.querySelectorAll(".tags__button");
 
-  //Recherche des recettes via la barre de recherche Algo 1
-  const researchInput = document.getElementById("searchBar");
-  const researchForm = document.getElementById("searchForm");
+  // Initiation de la galerie des recettes
+  gallery(recipes);
 
-  // Evenement à l'envoi de la recherche
-  researchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    //Valeur de la recherche
-    const research = researchInput.value;
+  // Ouvrir et fermer les onglets lors du click sur la flèche
+  tagsBtn.forEach((button) =>
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      button.innerHTML = "";
+      if (button.getAttribute("class") != "tags__button open") {
+        crossOpen(button);
+        openList(button);
+      } else {
+        crossClose(button);
+        closeList(button);
+      }
+    })
+  );
 
-    // Vérification de la condition de 3 lettres
-    const regexSup3letters = new RegExp(
-      "^[:a-zA-ZÀ-ž0-9\\^\\(\\)\\?\\!\\+\\*,\\.\\'\"/°]{3,}"
-    );
+  // DON'T - Cheminement
 
-    if (regexSup3letters.test(research)) {
-      // Récupérer les recettes de la recherche
-      const recipesResearch = new Research_2(recipes, research);
-      const newRecipes = recipesResearch.researchSort();
+  searchBar(recipes);
 
-      //Création de la nouvelle galerie à partir de la recherche
-      clearGallery();
-      displayData(newRecipes);
-    } else {
-      clearGallery();
-      errorMessage("Veuillez entrer au minimum 3 lettres pour votre recherche");
-      displayData(recipes);
-    }
-  });
+  // S'il choisit un tag
+
+  // S'il écrit dans un tag
+
+  // Si l'utilisateur tape dans les tags
+  // Et qu'il fait la recherche ensuite ou choisit un tag
+  // Et choisit l'autre option ensuite
+
+  // Si l'utilsateur choisit un tag
+  // Et qu'il fait la recherche ensuite ou tape un tag
+  // Et choisit l'autre option ensuite
 }
 
 init();

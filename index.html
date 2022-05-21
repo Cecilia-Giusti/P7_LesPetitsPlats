@@ -76,6 +76,7 @@
                 class="p-3"
                 id="searchBar"
                 placeholder="Rechercher une recette"
+                autocomplete="off"
               />
               <button id="searchBar__button" type="submit">
                 <i class="fi fi-br-search"></i>
@@ -87,50 +88,59 @@
         <!-- Tags Sélectionnés-->
         <div class="row">
           <div class="col-12 col-sm-12">
-            <div></div>
+            <ul id="tags" clas="col-sm-12"></ul>
           </div>
         </div>
         <!-- Listes déroulantes des tags -->
         <div class="row">
           <!-- Ingredients -->
           <div class="col-sm-4 col-lg-2">
-            <form class="ingredients">
+            <form id="ingredients__form" class="ingredients">
               <label for="ingredients"> </label>
               <input
                 type="text"
                 id="ingredients"
-                class="background-primary p-3 tags__input"
+                class="background-primary p-3 tags__input border-radius--full"
                 placeholder="Ingrédients"
+                autocomplete="off"
               />
-              <i class="fi fi-bs-angle-down"></i>
+              <button id="ingredients__button" class="tags__button">
+                <i class="fi fi-bs-angle-down"></i>
+              </button>
             </form>
           </div>
 
           <!-- Appareils -->
           <div class="col-sm-4 col-lg-2">
-            <form class="appareils">
-              <label for="appareils"> </label>
+            <form id="appliance__form" class="appliances">
+              <label for="appliances"> </label>
               <input
                 type="text"
-                id="appareils"
-                class="background-secondary p-3 tags__input"
+                id="appliances"
+                class="background-secondary border-radius--full p-3 tags__input"
                 placeholder="Appareils"
+                autocomplete="off"
               />
-              <i class="fi fi-bs-angle-down"></i>
+              <button id="appliance__button" class="tags__button">
+                <i class="fi fi-bs-angle-down"></i>
+              </button>
             </form>
           </div>
 
           <!-- Ustensils -->
           <div class="col-sm-4 col-lg-2">
-            <form class="ustensils">
+            <form id="ustensils__form" class="ustensils">
               <label for="ustensils"> </label>
               <input
                 type="text"
                 id="ustensils"
-                class="background-tertiary p-3 tags__input"
+                class="background-tertiary p-3 tags__input border-radius--full"
                 placeholder="Ustensiles"
+                autocomplete="off"
               />
-              <i class="fi fi-bs-angle-down"></i>
+              <button id="ustensils__button" class="tags__button">
+                <i class="fi fi-bs-angle-down"></i>
+              </button>
             </form>
           </div>
         </div>
@@ -157,13 +167,17 @@
     <!-- Scripts -->
 
     <!-- Utility -->
-    <script src="scripts/utility/utils.js" type="module"></script>
+    <script src="./scripts/modules/searchBar.js" type="module"></script>
+    <script src="./scripts/utility/utils.js" type="module"></script>
+    <script src="./scripts/utility/openCloseTagsList.js" type="module"></script>
+    <script src="./scripts/utility/tagOpen.js" type="module"></script>
+    <script src="./scripts/utility/tagClose.js" type="module"></script>
 
     <!-- Modele -->
-    <script src="scripts/models/GetRecipes.js" type="module"></script>
+    <script src="./scripts/models/GetRecipes.js" type="module"></script>
 
     <!-- Template -->
-    <script src="scripts/templates/RecipeCard.js" type="module"></script>
+    <script src="./scripts/templates/RecipeCard.js" type="module"></script>
 
     <!-- Algo 1 -->
     <script src="scripts/Class/Research_2.js" type="module"></script>

@@ -1,8 +1,8 @@
-/**Constructor Pattern - Pour les recettes
- * @constructor
- * @param {object} recipe - Une recette
- */
+/**Constructor Pattern - Pour les recettes*/
 export class GetRecipes {
+  /** Créer une recette
+   * @param {object} recipe - Une recette
+   */
   constructor(recipe) {
     this._recipe = recipe;
     this._name = recipe.name;
@@ -11,18 +11,30 @@ export class GetRecipes {
     this._description = recipe.description;
   }
 
+  /** Get the recipe
+   * @return {object} La recette
+   */
   get recipe() {
     return this._recipe;
   }
 
+  /** Get the name
+   * @return {string} Le nom de la recette
+   */
   get name() {
     return this._name;
   }
 
+  /** Get the time
+   * @return {string} Le temps pour faire la recette
+   */
   get time() {
     return this._time;
   }
 
+  /** Get the name
+   * @return {string} La liste des ingrédients de la recette
+   */
   get ingredients() {
     let ingredients = [];
     let i = 0;
@@ -62,6 +74,9 @@ export class GetRecipes {
     return ingredients.join(" ");
   }
 
+  /** Get the description
+   * @return {string} La description de la recette
+   */
   get description() {
     const regexInfWords = new RegExp("^\\s*\\S+(?:\\s+\\S+){0,40}\\s*$");
 

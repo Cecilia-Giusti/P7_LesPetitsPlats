@@ -1,8 +1,8 @@
-/** Classe pour créer une carte dans la page d'accueil
- * @constructor
- * @param {object} recipe - une recette
- */
+/** Class pour créer une carte dans la page d'accueil*/
 export class RecipeCard {
+  /** Créer une recette
+   * @param {object} recipe - une recette
+   */
   constructor(recipe) {
     this._recipe = recipe;
     this._name = recipe.name;
@@ -11,7 +11,9 @@ export class RecipeCard {
     this._description = recipe.description;
   }
 
-  /** Méthode pour créer une carte de photographe*/
+  /**  Méthode pour créer une carte de photographe
+   * @return {string} - un article representant une carte de recette
+   */
   createRecipeCard() {
     const $wrapper = document.createElement("div");
     $wrapper.setAttribute("class", "col-sm-6 col-lg-4 ");
