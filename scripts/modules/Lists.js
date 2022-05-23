@@ -3,7 +3,12 @@ import { tagClose } from "../utility/tagClose.js";
 import { searchTag } from "../utility/tags.js";
 import { gallery } from "./gallery.js";
 import { closeList } from "../utility/openCloseTagsList.js";
-import { crossClose } from "../utility/utils.js";
+import {
+  crossClose,
+  updateTagsListIngredient,
+  updateTagsListUstensil,
+  updateTagsListAppliance,
+} from "../utility/utils.js";
 import { htmlAdd } from "../utility/htmlAdd.js";
 
 const ingredientsTags = document.getElementById("ingredients__form");
@@ -33,26 +38,28 @@ export function ingredientList(recipes) {
       if (item.getAttribute("class") != htmlAdd.ingredient.listItemOpen) {
         // Affichage de l'ingrédient
         tagOpen(
-          item,
           ingredient,
           htmlAdd.ingredient.tagItem,
-          htmlAdd.ingredient.listItemOpen,
           htmlAdd.ingredient.classAddDataSet
         );
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, ingredient);
         gallery(newRecipes);
-        const ingredientButton = document.getElementById("ingredients__button");
-        if (ingredientButton.getAttribute("class") == "tags__button open") {
-          ingredientButton.querySelector("i").remove();
-          closeList(ingredientButton);
-          crossClose(ingredientButton);
-        }
-
         ingredientsTags.reset();
       }
-      // Enlever l'ustensil choisi
-      tagClose(htmlAdd.ingredient.listItemClose, recipes);
+
+      const ingredientButton = document.getElementById("ingredients__button");
+      if (ingredientButton.getAttribute("class") == "tags__button open") {
+        ingredientButton.querySelector("i").remove();
+        closeList(ingredientButton);
+        crossClose(ingredientButton);
+      }
+
+      // Enlever l'ingredient choisi
+      tagClose(htmlAdd.ingredient.listItemClose, recipes, ingredientButton);
+
+      //Empecher le rajout du même tag
+      updateTagsListIngredient(htmlAdd.ingredient.listItemOpen);
     })
   );
 }
@@ -71,26 +78,27 @@ export function ustensilsList(recipes) {
       if (item.getAttribute("class") != htmlAdd.ustensil.listItemOpen) {
         //Affichage de l'ustensil
         tagOpen(
-          item,
           ustensil,
           htmlAdd.ustensil.tagItem,
-          htmlAdd.ustensil.listItemOpen,
-          htmlAdd.ingredient.classAddDataSet
+          htmlAdd.ustensil.classAddDataSet
         );
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, ustensil);
         gallery(newRecipes);
-        const ustensilsButton = document.getElementById("ustensils__button");
-        if (ustensilsButton.getAttribute("class") == "tags__button open") {
-          ustensilsButton.querySelector("i").remove();
-          closeList(ustensilsButton);
-          crossClose(ustensilsButton);
-        }
-
         ustensilsTags.reset();
       }
+      const ustensilsButton = document.getElementById("ustensils__button");
+      if (ustensilsButton.getAttribute("class") == "tags__button open") {
+        ustensilsButton.querySelector("i").remove();
+        closeList(ustensilsButton);
+        crossClose(ustensilsButton);
+      }
+
       // Enlever l'ustensil choisi
-      tagClose(htmlAdd.ustensil.listItemClose, recipes);
+      tagClose(htmlAdd.ustensil.listItemClose, recipes, ustensilsButton);
+
+      //Empecher le rajout du même tag
+      updateTagsListUstensil(htmlAdd.ustensil.listItemOpen);
     })
   );
 }
@@ -109,26 +117,28 @@ export function applianceList(recipes) {
       if (item.getAttribute("class") != htmlAdd.appliance.listItemOpen) {
         //Affichage de l'appareil
         tagOpen(
-          item,
           appliance,
           htmlAdd.appliance.tagItem,
-          htmlAdd.appliance.listItemOpen,
-          htmlAdd.ingredient.classAddDataSet
+          htmlAdd.appliance.classAddDataSet
         );
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, appliance);
         gallery(newRecipes);
-        const appliancetButton = document.getElementById("appliance__button");
-        if (appliancetButton.getAttribute("class") == "tags__button open") {
-          appliancetButton.querySelector("i").remove();
-          closeList(appliancetButton);
-          crossClose(appliancetButton);
-        }
-
         applianceTags.reset();
       }
+
+      const appliancetButton = document.getElementById("appliance__button");
+      if (appliancetButton.getAttribute("class") == "tags__button open") {
+        appliancetButton.querySelector("i").remove();
+        closeList(appliancetButton);
+        crossClose(appliancetButton);
+      }
+
       // Enlever l'appareil choisi
-      tagClose(htmlAdd.appliance.listItemClose, recipes);
+      tagClose(htmlAdd.appliance.listItemClose, recipes, appliancetButton);
+
+      //Empecher le rajout du même tag
+      updateTagsListAppliance(htmlAdd.appliance.listItemOpen);
     })
   );
 }
