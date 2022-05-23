@@ -4,7 +4,7 @@ import { searchTag } from "../utility/tags.js";
 import { gallery } from "./gallery.js";
 import { closeList } from "../utility/openCloseTagsList.js";
 import { crossClose } from "../utility/utils.js";
-import { htmlAdd } from "/data/htmlAdd.js";
+import { htmlAdd } from "../utility/htmlAdd.js";
 
 const ingredientsTags = document.getElementById("ingredients__form");
 const ustensilsTags = document.getElementById("ustensils__form");
