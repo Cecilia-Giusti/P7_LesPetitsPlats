@@ -26,13 +26,11 @@ export function tagClose(classAddTagItemClose, recipes) {
 
       let item = cross.parentNode;
       tagsCross = document.querySelectorAll(".svg__close");
-      console.log(item);
 
       cross.parentNode.remove();
       item.setAttribute("class", classAddTagItemClose);
       if (tagsCross.length > 1) {
         let tag = tagDataset(item);
-        console.log(tag);
         const newRecipes = searchTagDelete(recipes, tag);
         gallery(newRecipes);
       } else {

@@ -14,7 +14,6 @@ const applianceTags = document.getElementById("appliance__form");
  * @param {object} Template - Listes des tags créées
  */
 export function createLists(Template) {
-  console.log(Template);
   ingredientsTags.appendChild(Template.createListIngredients());
   ustensilsTags.appendChild(Template.createListUstensils());
   applianceTags.appendChild(Template.createListAppliance());
