@@ -1,6 +1,7 @@
 import { searchTagDelete } from "./tags.js";
 import { gallery } from "../modules/gallery.js";
-import { tagDataset } from "./utils.js";
+import { tagDataset, crossClose } from "./utils.js";
+import { closeList } from "./openCloseTagsList.js";
 
 /** Fermer une liste de tags
  * @param {HTMLElement} tagsList - L'endroit où ajouter le css
@@ -17,7 +18,7 @@ export function crossCloseList(tagsList, input, classAddListClose) {
  * @param {string} classAddTagItemClose - css à ajouter lors de la fermeture du tag
  * @param {Array} recipes - Les recettes
  */
-export function tagClose(classAddTagItemClose, recipes) {
+export function tagClose(classAddTagItemClose, recipes, button) {
   let tagsCross = document.querySelectorAll(".svg__close");
 
   tagsCross.forEach((cross) =>
@@ -29,6 +30,11 @@ export function tagClose(classAddTagItemClose, recipes) {
 
       cross.parentNode.remove();
       item.setAttribute("class", classAddTagItemClose);
+
+      button.querySelector("i").remove();
+      closeList(button);
+      crossClose(button);
+
       if (tagsCross.length > 1) {
         let tag = tagDataset(item);
         const newRecipes = searchTagDelete(recipes, tag);
