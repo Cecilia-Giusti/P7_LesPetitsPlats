@@ -45,7 +45,6 @@ export function ingredientList(recipes) {
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, ingredient);
         gallery(newRecipes);
-
         ingredientsTags.reset();
       }
 
@@ -86,7 +85,6 @@ export function ustensilsList(recipes) {
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, ustensil);
         gallery(newRecipes);
-
         ustensilsTags.reset();
       }
       const ustensilsButton = document.getElementById("ustensils__button");
@@ -126,7 +124,6 @@ export function applianceList(recipes) {
         // Recherche avec le tag choisi
         const newRecipes = searchTag(recipes, appliance);
         gallery(newRecipes);
-
         applianceTags.reset();
       }
 
