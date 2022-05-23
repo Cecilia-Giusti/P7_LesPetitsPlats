@@ -12,7 +12,7 @@ export class RecipeCard {
   }
 
   /**  Méthode pour créer une carte de photographe
-   * @return {string} - un article representant une carte de recette
+   * @return {HTMLDivElement} - un article representant une carte de recette
    */
   createRecipeCard() {
     const $wrapper = document.createElement("div");

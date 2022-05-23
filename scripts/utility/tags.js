@@ -32,6 +32,7 @@ export function searchTagDelete(recipes, tag) {
   return newRecipes;
 }
 
+/** Fonction pour reset les listes de Tags */
 export function clearTagsLists() {
   document.getElementById("ingredients__form").lastChild.remove();
   document.getElementById("ustensils__form").lastChild.remove();

@@ -8,7 +8,7 @@ import { ingredientList } from "../modules/Lists.js";
 import { applianceList } from "../modules/Lists.js";
 import { ustensilsList } from "../modules/Lists.js";
 
-/**Fonction pour réaliser une recheche via les tags inputs
+/**Fonction pour réaliser une recherche via les tags inputs et mettre à jour les listes
  * @param {array} - Les recettes
  */
 export function searchTagsInput(recipes) {
@@ -69,7 +69,6 @@ export function searchTagsInput(recipes) {
               applianceBtn,
               htmlAdd.appliance.errorMessageInput
             );
-
             applianceList(recipes);
           } else {
             gallery(recipes);
@@ -91,7 +90,6 @@ export function searchTagsInput(recipes) {
               ustensilBtn,
               htmlAdd.ustensil.errorMessageInput
             );
-
             ustensilsList(recipes);
           } else {
             gallery(recipes);

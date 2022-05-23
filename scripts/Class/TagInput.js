@@ -24,7 +24,7 @@ export class TagInput {
         listArray.push(ingredientItem);
       }
     });
-    return listArray;
+    return listArray.join(" ");
   }
 
   /**Recherche des ustensils correspondants à la recherche
@@ -42,7 +42,7 @@ export class TagInput {
       }
     });
 
-    return listArray;
+    return listArray.join(" ");
   }
 
   /**Recherche des appareils correspondants à la recherche
@@ -60,6 +60,6 @@ export class TagInput {
       }
     });
 
-    return listArray;
+    return listArray.join(" ");
   }
 }

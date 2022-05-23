@@ -10,7 +10,7 @@ const ustensilsInput = document.getElementById("ustensils");
 const applianceInput = document.getElementById("appliances");
 
 /** Fonction pour ouvrir les listes
- * @param {string} - le bouton utilisé
+ * @param {Element} - le bouton utilisé
  */
 export function openList(button) {
   // Ouverture des listes
@@ -61,7 +61,7 @@ export function openList(button) {
 }
 
 /**Fonction pour fermer les listes
- * @param {string} - le bouton utilisé
+ * @param {Element} - Le bouton utilisé
  */
 export function closeList(button) {
   // Fermeture de la liste

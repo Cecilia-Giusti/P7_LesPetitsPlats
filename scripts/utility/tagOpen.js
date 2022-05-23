@@ -1,19 +1,10 @@
 /**Fonction pour afficher le tag choisi
- * @param {string} item - L'item qui reçoit le nouveau css
  * @param {string} item_dataset - tag choisi
  * @param {string} classAddTagItem - class à ajouter au tag à l'ouverture
- * @param {string} classAddTagItemOpen - class à ajouter au tag à la fermeture
  * @param {string} classAddDataSet - nom du dataset à ajouter
  */
-export function tagOpen(
-  item,
-  item_dataset,
-  classAddTagItem,
-  classAddTagItemOpen,
-  classAddDataSet
-) {
+export function tagOpen(item_dataset, classAddTagItem, classAddDataSet) {
   const tagsListChoose = document.getElementById("tags");
-
   const tagsItemChoose = document.createElement("li");
   tagsItemChoose.setAttribute("class", classAddTagItem);
 
@@ -28,5 +19,4 @@ fill="white"/>
   tagsItemChoose.innerHTML = tagItemChoose;
 
   tagsListChoose.appendChild(tagsItemChoose);
-  item.setAttribute("class", classAddTagItemOpen);
 }

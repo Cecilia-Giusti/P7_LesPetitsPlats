@@ -26,21 +26,7 @@ async function init() {
     })
   );
 
-  // DON'T - Cheminement
-
   searchBar(recipes);
-
-  // S'il choisit un tag
-
-  // S'il écrit dans un tag
-
-  // Si l'utilisateur tape dans les tags
-  // Et qu'il fait la recherche ensuite ou choisit un tag
-  // Et choisit l'autre option ensuite
-
-  // Si l'utilsateur choisit un tag
-  // Et qu'il fait la recherche ensuite ou tape un tag
-  // Et choisit l'autre option ensuite
 }
 
 init();
