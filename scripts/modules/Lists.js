@@ -10,13 +10,16 @@ const ingredientsTags = document.getElementById("ingredients__form");
 const ustensilsTags = document.getElementById("ustensils__form");
 const applianceTags = document.getElementById("appliance__form");
 
+/** Fonction pour initialiser les listes de Tags
+ * @param {object} Template - Listes des tags créées
+ */
 export function createLists(Template) {
   ingredientsTags.appendChild(Template.createListIngredients());
   ustensilsTags.appendChild(Template.createListUstensils());
   applianceTags.appendChild(Template.createListAppliance());
 }
 
-/** Fonction pour créer la liste des ingrédients
+/** Fonction pour mettre la liste des ingrédients à jour en fonction de l'ajout d'un tag
  * @param {object} Template - Objet créé par la class ListTag
  * @param {array} recipes - Les recettes
  */
@@ -54,7 +57,7 @@ export function ingredientList(recipes) {
   );
 }
 
-/** Fonction pour créer la liste des ingrédients
+/** Fonction pour mettre la liste des ustensils à jour en fonction de l'ajout d'un tag
  * @param {object} Template - Objet créé par la class ListTag
  * @param {array} recipes - Les recettes
  */
@@ -92,7 +95,7 @@ export function ustensilsList(recipes) {
   );
 }
 
-/** Fonction pour créer la liste des ingrédients
+/** Fonction pour mettre la liste des appareils à jour en fonction de l'ajout d'un tag
  * @param {object} Template - Objet créé par la class ListTag
  * @param {array} recipes - Les recettes
  */

@@ -5,6 +5,8 @@ import { crossClose } from "./utils.js";
 import { gallery } from "../modules/gallery.js";
 import { htmlAdd } from "./htmlAdd.js";
 import { ingredientList } from "../modules/Lists.js";
+import { applianceList } from "../modules/Lists.js";
+import { ustensilsList } from "../modules/Lists.js";
 
 /**Fonction pour réaliser une recheche via les tags inputs
  * @param {array} - Les recettes
@@ -67,6 +69,8 @@ export function searchTagsInput(recipes) {
               applianceBtn,
               htmlAdd.appliance.errorMessageInput
             );
+
+            applianceList(recipes);
           } else {
             gallery(recipes);
             closeList(applianceBtn);
@@ -87,6 +91,8 @@ export function searchTagsInput(recipes) {
               ustensilBtn,
               htmlAdd.ustensil.errorMessageInput
             );
+
+            ustensilsList(recipes);
           } else {
             gallery(recipes);
             closeList(ustensilBtn);
