@@ -7,7 +7,7 @@ import { errorMessage } from "../utility/utils.js";
  * @param {Array} recipes - Les recettes
  */
 export function searchBar(recipes) {
-  // Si l-utilisateur cherche dans la barre de recherche en premier
+  // Si l'utilisateur cherche dans la barre de recherche en premier
   const researchInput = document.getElementById("searchBar");
   const researchForm = document.getElementById("searchForm");
 
