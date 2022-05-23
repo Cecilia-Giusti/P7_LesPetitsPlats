@@ -36,10 +36,20 @@ export function searchBar(recipes) {
     }
   });
 
-  //Si la barre de recherche est vide, on réinitialise
-  researchForm.addEventListener("input", (e) => {
-    e.preventDefault();
-    if (e.data == null || e.data == undefined) {
+  // Evenement à l'envoi de la recherche
+  researchForm.addEventListener("input", (event) => {
+    event.preventDefault();
+
+    //Valeur de la recherche
+    const research = researchInput.value;
+
+    if (research.length >= 3) {
+      // Récupérer les recettes correspondant à la recherche
+      const recipesResearch = new Research(recipes, research);
+      const newRecipes = recipesResearch.researchSort();
+      gallery(newRecipes);
+      return newRecipes;
+    } else {
       gallery(recipes);
     }
   });
