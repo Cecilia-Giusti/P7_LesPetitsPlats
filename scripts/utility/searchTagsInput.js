@@ -3,7 +3,7 @@ import { showTagsInput } from "./showTagsInput.js";
 import { closeList } from "./openCloseTagsList.js";
 import { crossClose } from "./utils.js";
 import { gallery } from "../modules/gallery.js";
-import { htmlAdd } from "/data/htmlAdd.js";
+import { htmlAdd } from "./htmlAdd.js";
 import { ingredientList } from "../modules/Lists.js";
 
 /**Fonction pour réaliser une recheche via les tags inputs
