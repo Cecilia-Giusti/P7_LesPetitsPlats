@@ -1,4 +1,3 @@
-import { searchTagDelete } from "./tags.js";
 import { gallery } from "../modules/gallery.js";
 import { tagDataset, crossClose } from "./utils.js";
 import { closeList } from "./openCloseTagsList.js";
@@ -44,15 +43,8 @@ export function tagClose(classAddTagItemClose, recipesSearch, button) {
 
       // S'il y a plus de 2 tags
       if (tagsCross.length > 1) {
-        //Si c'est le dernier tag de la liste
-        if (cross == tagsCross[tagsCross.length - 1]) {
-          //Suppression du tag
-          let tag = tagDataset(item);
-          const newRecipes = searchTagDelete(recipesSearch, tag);
-          gallery(newRecipes);
-
-          // Sinon s'il existe une valeur dans la barre de recherche
-        } else if (searchbarValue) {
+        // S'il y a une valeur dans la barre de recherche
+        if (searchbarValue) {
           // Vérification de la condition de 3 lettres
           const regexSup3letters = new RegExp(
             "^[:a-zA-ZÀ-ž0-9\\^\\(\\)\\?\\!\\+\\*,\\.\\'\"/°\\s]{3,}$"
@@ -64,14 +56,14 @@ export function tagClose(classAddTagItemClose, recipesSearch, button) {
 
             //Recherche avec la barre de recherche
             let newRecipes = recipesResearch.researchSort();
-            let recipesAfterTag;
+            let recipesAfterTag = newRecipes;
 
             // Recherche avec les tags restants
             tagsCross.forEach((cross) => {
               let tag = tagDataset(item);
               let tagShow = tagDataset(cross.parentNode);
               if (tagShow != tag) {
-                recipesAfterTag = searchTag(newRecipes, tagShow);
+                recipesAfterTag = searchTag(recipesAfterTag, tagShow);
                 return recipesAfterTag;
               }
             });
@@ -81,12 +73,12 @@ export function tagClose(classAddTagItemClose, recipesSearch, button) {
           event.stopImmediatePropagation();
         } else {
           //Recherche avec les tags restants
-          let recipesAfterTag;
+          let recipesAfterTag = recipes;
           tagsCross.forEach((cross) => {
             let tag = tagDataset(item);
             let tagShow = tagDataset(cross.parentNode);
             if (tagShow != tag) {
-              recipesAfterTag = searchTag(recipes, tagShow);
+              recipesAfterTag = searchTag(recipesAfterTag, tagShow);
               return recipesAfterTag;
             }
           });
@@ -95,12 +87,7 @@ export function tagClose(classAddTagItemClose, recipesSearch, button) {
           event.stopImmediatePropagation();
         }
 
-        // S'il n'y a qu'un seul tag et aucune valeur dans la barre de recherche
-      } else if (tagsCross.length <= 1 && !searchbarValue) {
-        gallery(recipes);
-        event.stopImmediatePropagation();
-
-        // S'il n'y a qu'un seul tag et une valeur dans la barre de recherche
+        // S'il n'y a aucun tag et une valeur dans la barre de recherche
       } else if (tagsCross.length <= 1 && searchbarValue) {
         // Vérification de la condition de 3 lettres
         const regexSup3letters = new RegExp(
