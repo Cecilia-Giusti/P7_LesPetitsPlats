@@ -31,27 +31,4 @@ export class TagChoose {
 
     return recipesArray;
   }
-
-  /**Enlever le tag de la recherche
-   * @return {array} Un tableau des recettes correspondant à la recherche
-   */
-  tagDelete() {
-    let recipesArray = this._recipes.filter((recipe) => {
-      let ingredientArray = recipe.ingredients.map((item) =>
-        item.ingredient.toLowerCase()
-      );
-
-      let ustensilsArray = recipe.ustensils.map((ustensil) =>
-        ustensil.toLowerCase()
-      );
-
-      return (
-        !recipe.appliance.toLowerCase().includes(this._research) ||
-        !ustensilsArray.includes(this._research) ||
-        !ingredientArray.includes(this._research)
-      );
-    });
-
-    return recipesArray;
-  }
 }

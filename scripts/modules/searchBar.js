@@ -1,6 +1,5 @@
 import { Research } from "../Class/Research.js";
-import { gallery, displayData } from "./gallery.js";
-import { clearGallery } from "./gallery.js";
+import { gallery, displayData, clearGallery } from "./gallery.js";
 import { errorMessage } from "../utility/utils.js";
 
 /** Fonction pour initialiser la recherche dans la barre de recherche
