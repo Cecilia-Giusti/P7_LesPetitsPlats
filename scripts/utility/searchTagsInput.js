@@ -4,9 +4,11 @@ import { closeList } from "./openCloseTagsList.js";
 import { crossClose } from "./utils.js";
 import { gallery } from "../modules/gallery.js";
 import { htmlAdd } from "./htmlAdd.js";
-import { ingredientList } from "../modules/Lists.js";
-import { applianceList } from "../modules/Lists.js";
-import { ustensilsList } from "../modules/Lists.js";
+import {
+  ingredientList,
+  applianceList,
+  ustensilsList,
+} from "../modules/Lists.js";
 
 /**Fonction pour réaliser une recherche via les tags inputs et mettre à jour les listes
  * @param {array} - Les recettes
