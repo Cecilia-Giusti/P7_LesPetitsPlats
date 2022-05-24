@@ -24,10 +24,12 @@ export function crossCloseList(tagsList, input, classAddListClose) {
 export function tagClose(classAddTagItemClose, recipesSearch, button) {
   let tagsCross = document.querySelectorAll(".svg__close");
 
+  // Pour chaque croix
   tagsCross.forEach((cross) =>
     cross.addEventListener("click", function (event) {
       event.preventDefault();
 
+      // Récupération des tags
       let item = cross.parentNode;
       tagsCross = document.querySelectorAll(".svg__close");
 
@@ -40,11 +42,16 @@ export function tagClose(classAddTagItemClose, recipesSearch, button) {
 
       let searchbarValue = document.getElementById("searchBar").value;
 
+      // S'il y a plus de 2 tags
       if (tagsCross.length > 1) {
+        //Si c'est le dernier tag de la liste
         if (cross == tagsCross[tagsCross.length - 1]) {
+          //Suppression du tag
           let tag = tagDataset(item);
           const newRecipes = searchTagDelete(recipesSearch, tag);
           gallery(newRecipes);
+
+          // Sinon s'il existe une valeur dans la barre de recherche
         } else if (searchbarValue) {
           // Vérification de la condition de 3 lettres
           const regexSup3letters = new RegExp(
@@ -54,8 +61,12 @@ export function tagClose(classAddTagItemClose, recipesSearch, button) {
           if (regexSup3letters.test(searchbarValue)) {
             // Récupérer les recettes correspondant à la recherche
             const recipesResearch = new Research(recipes, searchbarValue);
+
+            //Recherche avec la barre de recherche
             let newRecipes = recipesResearch.researchSort();
             let recipesAfterTag;
+
+            // Recherche avec les tags restants
             tagsCross.forEach((cross) => {
               let tag = tagDataset(item);
               let tagShow = tagDataset(cross.parentNode);
@@ -69,6 +80,7 @@ export function tagClose(classAddTagItemClose, recipesSearch, button) {
           }
           event.stopImmediatePropagation();
         } else {
+          //Recherche avec les tags restants
           let recipesAfterTag;
           tagsCross.forEach((cross) => {
             let tag = tagDataset(item);
@@ -82,9 +94,13 @@ export function tagClose(classAddTagItemClose, recipesSearch, button) {
           gallery(recipesAfterTag);
           event.stopImmediatePropagation();
         }
+
+        // S'il n'y a qu'un seul tag et aucune valeur dans la barre de recherche
       } else if (tagsCross.length <= 1 && !searchbarValue) {
         gallery(recipes);
         event.stopImmediatePropagation();
+
+        // S'il n'y a qu'un seul tag et une valeur dans la barre de recherche
       } else if (tagsCross.length <= 1 && searchbarValue) {
         // Vérification de la condition de 3 lettres
         const regexSup3letters = new RegExp(
@@ -98,6 +114,8 @@ export function tagClose(classAddTagItemClose, recipesSearch, button) {
           gallery(newRecipes);
           event.stopImmediatePropagation();
         }
+
+        // Si aucun tag et aucune valeur dans la barre de recherche
       } else {
         gallery(recipes);
         event.stopImmediatePropagation();
