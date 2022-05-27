@@ -1,13 +1,13 @@
 import { TagChoose } from "../Class/TagChoose.js";
-import { GetTags } from "../models/GetTags.js";
+import { Tags } from "../models/Tags.js";
 import { ListTag } from "../templates/ListTag.js";
 
 /** Création des tags
  * @param  {array} recipes - Les recettes disponibles
  */
-export function tags(recipes) {
+export function tagsUtils(recipes) {
   //Instanciation des Class
-  const tagsGet = new GetTags(recipes);
+  const tagsGet = new Tags(recipes);
   const template = new ListTag(tagsGet);
   return template;
 }

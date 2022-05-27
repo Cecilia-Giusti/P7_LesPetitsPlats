@@ -3,7 +3,7 @@ import { tagDataset, crossClose } from "./utils.js";
 import { closeList } from "./openCloseTagsList.js";
 import { recipes } from "../../data/recipes.js";
 import { Research } from "../Class/Research.js";
-import { searchTag } from "./tags.js";
+import { searchTag } from "./tagsUtils.js";
 
 /** Fermer une liste de tags
  * @param {HTMLElement} tagsList - L'endroit où ajouter le css
