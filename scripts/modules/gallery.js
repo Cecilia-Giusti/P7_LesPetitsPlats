@@ -1,7 +1,7 @@
-import { GetRecipes } from "../models/GetRecipes.js";
+import { Recipes } from "../models/Recipes.js";
 import { RecipeCard } from "../templates/RecipeCard.js";
 import { errorMessage } from "../utility/utils.js";
-import { tags, clearTagsLists } from "../utility/tags.js";
+import { tagsUtils, clearTagsLists } from "../utility/tagsUtils.js";
 import {
   applianceList,
   createLists,
@@ -18,7 +18,7 @@ export function displayData(recipes) {
   //Utilisation du constructor pattern pour récupérer les différents items
   if (recipes.length >= 1) {
     recipes.forEach((recipe) => {
-      const getRecipe = new GetRecipes(recipe);
+      const getRecipe = new Recipes(recipe);
       const Template = new RecipeCard(getRecipe);
       recipesSection.appendChild(Template.createRecipeCard());
     });
@@ -46,7 +46,7 @@ export function gallery(recipes) {
   // initiation des listes de tags
   clearTagsLists();
 
-  const Template = tags(recipes);
+  const Template = tagsUtils(recipes);
   createLists(Template);
 
   ingredientList(recipes);

@@ -1,5 +1,5 @@
 /**Constructor Pattern - Pour les recettes*/
-export class GetRecipes {
+export class Recipes {
   /** Créer une recette
    * @param {object} recipe - Une recette
    */

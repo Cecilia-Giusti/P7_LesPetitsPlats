@@ -1,6 +1,6 @@
 import { tagOpen } from "../utility/tagOpen.js";
 import { tagClose } from "../utility/tagClose.js";
-import { searchTag } from "../utility/tags.js";
+import { searchTag } from "../utility/tagsUtils.js";
 import { gallery } from "./gallery.js";
 import { closeList } from "../utility/openCloseTagsList.js";
 import {

@@ -1,5 +1,5 @@
 /**Constructor Pattern - Pour les listes de tags*/
-export class GetTags {
+export class Tags {
   /**Créer un tableau de recettes
    * @param {array} recipes - Toutes les recettes
    */
