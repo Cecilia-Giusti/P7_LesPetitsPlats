@@ -10,7 +10,7 @@ import {
 } from "./Lists.js";
 import { searchTagsInput } from "../utility/searchTagsInput.js";
 
-/**Fonction pour créer le tableaux des photographes
+/**Fonction pour créer la galerie de recettes
  * @param {Array} recipes - Toutes les recettes
  */
 export function displayData(recipes) {
@@ -53,5 +53,6 @@ export function gallery(recipes) {
   ustensilsList(recipes);
   applianceList(recipes);
 
+  //Lancement de la recherche par Tag
   searchTagsInput(recipes);
 }

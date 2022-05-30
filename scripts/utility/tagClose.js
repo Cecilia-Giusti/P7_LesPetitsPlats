@@ -18,9 +18,9 @@ export function crossCloseList(tagsList, input, classAddListClose) {
 
 /** Fermer un tag
  * @param {string} classAddTagItemClose - css à ajouter lors de la fermeture du tag
- * @param {Array} recipesSearch - Les recettes qui ont été trié auparavant
+ * @param {HTMLElement} button - Le bouton cliqué
  */
-export function tagClose(classAddTagItemClose, recipesSearch, button) {
+export function tagClose(classAddTagItemClose, button) {
   let tagsCross = document.querySelectorAll(".svg__close");
 
   // Pour chaque croix

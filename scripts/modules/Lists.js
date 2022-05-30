@@ -56,7 +56,7 @@ export function ingredientList(recipes) {
       }
 
       // Enlever l'ingredient choisi
-      tagClose(htmlAdd.ingredient.listItemClose, recipes, ingredientButton);
+      tagClose(htmlAdd.ingredient.listItemClose, ingredientButton);
 
       //Empecher le rajout du même tag
       updateTagsListIngredient(htmlAdd.ingredient.listItemOpen);
@@ -95,7 +95,7 @@ export function ustensilsList(recipes) {
       }
 
       // Enlever l'ustensil choisi
-      tagClose(htmlAdd.ustensil.listItemClose, recipes, ustensilsButton);
+      tagClose(htmlAdd.ustensil.listItemClose, ustensilsButton);
 
       //Empecher le rajout du même tag
       updateTagsListUstensil(htmlAdd.ustensil.listItemOpen);
@@ -135,7 +135,7 @@ export function applianceList(recipes) {
       }
 
       // Enlever l'appareil choisi
-      tagClose(htmlAdd.appliance.listItemClose, recipes, appliancetButton);
+      tagClose(htmlAdd.appliance.listItemClose, appliancetButton);
 
       //Empecher le rajout du même tag
       updateTagsListAppliance(htmlAdd.appliance.listItemOpen);
