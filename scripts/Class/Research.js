@@ -21,7 +21,7 @@ export class Research {
       return (
         recipe.name.toLowerCase().includes(this._research) ||
         recipe.description.toLowerCase().includes(this._research) ||
-        ingredientArray.includes(this._research)
+        ingredientArray.join().includes(this._research)
       );
     });
     return recipesArray;
